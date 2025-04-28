@@ -1,9 +1,57 @@
-html{
-    --all-color:#;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-green-color:#0aad0a;
+    --main-text-color:#21313c;
 }
 body{
     font-family: "IBM Plex Sans", sans-serif;
 }
-.max-width-500{
-    max-width: 500px;
+.container {
+width: 95%;
+margin-inline: auto;
+padding-block: 20px;
+padding-right: 1rem;
+padding-left: 1rem;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+.container {
+    max-width: 540px;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+.container {
+    max-width: 720px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+.container {
+    max-width: 960px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+.container {
+    max-width: 1140px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+}
+/* XXL devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+.container {
+    max-width: 1320px;
+}
 }
