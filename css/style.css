@@ -1,0 +1,9 @@
+html{
+    --all-color:#;
+}
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+}
+.max-width-500{
+    max-width: 500px;
+}
