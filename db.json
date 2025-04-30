@@ -1,12 +1,12 @@
 {
   "user": [
     {
-      "id": "68d0",
-      "name": "Ali hassan",
-      "email": "atsss08112@gmail.com",
-      "phone": "01113785716",
+      "id": "d32d",
+      "name": "Ahmed Taha",
+      "email": "atsss0811@gmail.com",
+      "phone": "01113795716",
       "password": "At927531684",
-      "role": "seller"
+      "role": "admin"
     }
   ],
   "products": [
@@ -15,39 +15,50 @@
       "name": "Product 1",
       "price": 10.99,
       "description": "Description for product 1",
-      "image": "https://via.placeholder.com/150"
+      "image": [
+        "https://example.com/image1.jpg",
+        "https://example.com/image"
+      ]
     },
     {
       "id": "2",
       "name": "Product 2",
       "price": 20.99,
       "description": "Description for product 2",
-      "image": "https://via.placeholder.com/150"
+      "image": [
+        "https://example.com/image1.jpg",
+        "https://example.com/image"
+      ]
     },
     {
       "id": "3",
       "name": "Product 3",
       "price": 30.99,
       "description": "Description for product 3",
-      "image": "https://via.placeholder.com/150"
+      "image": [
+        "https://example.com/image1.jpg",
+        "https://example.com/image"
+      ]
     }
   ],
-  "cart": {
-    "userId": 1,
-    "cartId": 1,
-    "totalPrice": 42.97,
-    "totalItems": 3,
-    "cartProducts": [
-      {
-        "productId": 1,
-        "quantity": 2
-      },
-      {
-        "productId": 2,
-        "quantity": 1
-      }
-    ]
-  },
+  "cart": [
+    {
+      "userId": 1,
+      "cartId": 1,
+      "totalPrice": 42.97,
+      "totalItems": 3,
+      "cartProducts": [
+        {
+          "productId": 1,
+          "quantity": 2
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
   "orders": [
     {
       "orderId": 1,

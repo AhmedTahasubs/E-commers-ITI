@@ -6,9 +6,75 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../auth/auth.css">
     <link rel="stylesheet" href="./admin.css">
     <title>Admin</title>
 </head>
 <body>
+    <main class="container">
+        <header class="main-content">
+            <h2>Welcome to the Admin Panel!</h2>
+            <p class="text">Manage your application settings and user accounts here.</p>
+        </header>
+        <section class="">
+            <h3>Users Management</h2>
+            <div class="form">
+                <div>
+                    <input placeholder=" " id="name" name="name" type="text" required>
+                    <label  for="name">Name</label>
+                    <p id="nameError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="email" name="email" type="email" required>
+                    <label  for="email">Email</label>
+                    <p id="emailError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="phone" name="phone" type="tel" required>
+                    <label  for="phone">Phone</label>
+                    <p id="phoneError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="password" name="password" type="password" required>
+                    <label  for="password">Password</label>
+                    <p id="passError"></p>
+                </div>
+            </div>
+            <select id="userRole">
+                <option value="" disabled selected>Select User Role</option>
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+                <option value="seller">Seller</option>
+            </select>
+            <div class="btn-container">
+                <button type="button" id="register" class="btn">Add User</button>
+                <button type="button" id="edit" class="btn">Edit User</button>
+            </div>
+            <table class="">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <!-- <tr>
+                        <td>Ahmed Taha</td>
+                        <td>ahmed@gmail.com</td>
+                        <td>0123456789</td>
+                        <td class="role">Admin</td>
+                        <td class="action">
+                            <span class=""><i class="fa-solid fa-user-pen"></i></span>
+                            <span class=""><i class="fa-solid fa-trash-can"></i></span> 
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="./admin.js"></script>
 </body>
 </html>

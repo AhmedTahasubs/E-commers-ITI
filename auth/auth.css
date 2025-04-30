@@ -21,11 +21,11 @@ h2{
     background-color: transparent;
     outline: none;
     width: 300px;
+    transition: all 0.3s ease;
 }
 .form div input:focus ,.form div input:not(:placeholder-shown):valid ,.form div input:not(:placeholder-shown):invalid{
     border: 1px solid var(--main-green-color);
     box-shadow: 0 0 5px var(--main-green-color);
-    transition: all 0.3s ease;
 }
 .form div label{
     font-size: 16px;
