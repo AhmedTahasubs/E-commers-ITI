@@ -1,81 +1,89 @@
 {
-    "user":{
-        "name":"John Doe",
-        "age":30,
-        "email":"ahmed@gmail.com",
-        "password":"12345678",
-        "role":"admin",
-        "token":"eyJvasevsaev"
-
+  "user": [
+    {
+      "id": "be2e",
+      "name": "ahmed",
+      "email": "atsss0811@gmail.com",
+      "phone": "01113785716",
+      "password": "At927531684",
+      "role": "user"
     },
-    "products": [
-            {
-                "id": 1,
-                "name": "Product 1",
-                "price": 10.99,
-                "description": "Description for product 1",
-                "image": "https://via.placeholder.com/150"
-            },
-            {
-                "id": 2,
-                "name": "Product 2",
-                "price": 20.99,
-                "description": "Description for product 2",
-                "image": "https://via.placeholder.com/150"
-            },
-            {
-                "id": 3,
-                "name": "Product 3",
-                "price": 30.99,
-                "description": "Description for product 3",
-                "image": "https://via.placeholder.com/150"
-            }
+    {
+      "id": "ab30",
+      "name": "Ahmed Taha",
+      "email": "atsss08111@gmail.com",
+      "phone": "01113795716",
+      "password": "At927531684",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 10.99,
+      "description": "Description for product 1",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 20.99,
+      "description": "Description for product 2",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 30.99,
+      "description": "Description for product 3",
+      "image": "https://via.placeholder.com/150"
+    }
+  ],
+  "cart": {
+    "userId": 1,
+    "cartId": 1,
+    "totalPrice": 42.97,
+    "totalItems": 3,
+    "cartProducts": [
+      {
+        "productId": 1,
+        "quantity": 2
+      },
+      {
+        "productId": 2,
+        "quantity": 1
+      }
     ]
-    ,
-    "cart": {
-        "userId": 1,
-        "cartId": 1,
-        "totalPrice": 42.97,
-        "totalItems": 3,
-        "cartProducts": [
-            {
-                "productId": 1,
-                "quantity": 2
-            },
-            {
-                "productId": 2,
-                "quantity": 1
-            }
-        ]
-    },
-    "orders": [
+  },
+  "orders": [
+    {
+      "orderId": 1,
+      "userId": 1,
+      "items": [
         {
-            "orderId": 1,
-            "userId": 1,
-            "items": [
-                {
-                    "productId": 1,
-                    "quantity": 2
-                },
-                {
-                    "productId": 2,
-                    "quantity": 1
-                }
-            ],
-            "totalPrice": 42.97,
-            "status": "shipped"
+          "productId": 1,
+          "quantity": 2
         },
         {
-            "orderId": 2,
-            "userId": 1,
-            "items": [
-                {
-                    "productId": 3,
-                    "quantity": 1
-                }
-            ],
-            "totalPrice": 30.99,
-            "status": "pending"
+          "productId": 2,
+          "quantity": 1
         }
-    ]
+      ],
+      "totalPrice": 42.97,
+      "status": "shipped"
+    },
+    {
+      "orderId": 2,
+      "userId": 1,
+      "items": [
+        {
+          "productId": 3,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 30.99,
+      "status": "pending"
+    }
+  ]
 }
