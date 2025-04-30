@@ -10,6 +10,42 @@
     <title>Signup</title>
 </head>
 <body>
-    
+    <section class="container">
+        <h2>
+            <i class="fa-regular fa-circle-user"></i>
+            Register now
+        </h2>
+        <div class="form">
+            <div>
+                <input placeholder=" " id="name" name="name" type="text" required>
+                <label  for="name">Name</label>
+                <p id="nameError"></p>
+            </div>
+            <div>
+                <input placeholder=" " id="email" name="email" type="email" required>
+                <label  for="email">Email</label>
+                <p id="emailError"></p>
+            </div>
+            <div>
+                <input placeholder=" " id="phone" name="phone" type="tel" required>
+                <label  for="phone">Phone</label>
+                <p id="phoneError"></p>
+            </div>
+            <div>
+                <input placeholder=" " id="password" name="password" type="password" required>
+                <label  for="password">Password</label>
+                <p id="passError"></p>
+            </div>
+            <div>
+                <input placeholder=" " id="rePassword" name="rePassword" type="password" required>
+                <label  for="rePassword">Confirm Password</label>
+                <p id="rePassError"></p>
+            </div>
+            <div class="btns">
+                <button type="button" id="register" class="btn">Register</button>
+            </div>
+        </div>
+    </section>
+    <script src="./signup.js"></script>
 </body>
 </html>
