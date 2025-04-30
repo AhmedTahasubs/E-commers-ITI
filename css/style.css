@@ -3,8 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-a{
-}
 :root {
     --main-green-color: #0aad0a;
     --main-text-color: #21313c;
@@ -13,6 +11,7 @@ a{
 body {
     font-family: "IBM Plex Sans", sans-serif;
     background-image: url(../images/light-patten.svg);
+    color: var(--main-text-color);
 }
 
 .container {
@@ -50,12 +49,12 @@ body {
 }
 
 .green-icon {
-    color: #0aad0a;
+    color: var(--main-green-color);
 }
 
 .brand {
     font-size: 20px;
-    color: #333;
+    color: var(--main-text-color);
 }
 
 .brand .bold {
@@ -79,7 +78,7 @@ body {
 
 .nav-links li a {
     text-decoration: none;
-    color: #333;
+    color: var(--main-text-color);
     font-size: 16px;
     position: relative;
 }
@@ -101,13 +100,13 @@ body {
 }
 
 h2 {
-    color: #060606;
+    color: var(--main-text-color);
     margin-bottom: 20px;
 }
 
 h2>span {
 
-    color: #0aad0a;
+    color: var(--main-green-color);
     font-weight: bold;
     margin-right: 5px;
 
@@ -121,7 +120,7 @@ h2>span {
 
 .card {
     background: white;
-    border: 2px solid #4caf50;
+    border: 2px solid var(--main-green-color);
     border-radius: 10px;
     padding: 10px;
     text-align: center;
@@ -140,7 +139,7 @@ h2>span {
 }
 
 .category {
-    color: #388e3c;
+    color: var(--main-green-color);
     font-weight: bold;
 }
 
@@ -175,7 +174,7 @@ h2>span {
 }
 
 .actions i {
-    background: #4caf50;
+    background: var(--main-green-color);
     color: white;
     padding: 10px;
     border-radius: 50%;
@@ -198,18 +197,17 @@ h2>span {
 .footer h2 {
     font-size: 24px;
     margin-bottom: 10px;
-
-    color: #474343;
+    color: var(--main-text-color);
 }
 
 .footer .green-bar {
-    color: green;
+    color: var(--main-green-color);
     font-weight: bold;
     margin-right: 5px;
 }
 
 .footer p {
-    color: #555;
+    color: var(--main-text-color);
     margin-bottom: 20px;
 
 }
@@ -228,7 +226,7 @@ h2>span {
 
 .email-form button {
     padding: 10px 20px;
-    background-color: #00b207;
+    background-color: var(--main-green-color);
     color: white;
     border: none;
     border-radius: 5px;
@@ -252,14 +250,14 @@ h2>span {
 
 .payments>h4 {
     font-size: 20px;
-    color: #474343;
+    color: var(--main-text-color);
     margin-bottom: 15px;
     text-align: center;
 }
 
 .apps>h4 {
     font-size: 20px;
-    color: #474343;
+    color: var(--main-text-color);
 }
 
 .footer-sections img {
@@ -306,7 +304,6 @@ h2>span {
         padding-right: 1rem;
         padding-left: 1rem;
     }
-    
     .navbar{
         flex-wrap: nowrap;
     }
@@ -319,12 +316,8 @@ h2>span {
         display: none;
     }
     .footer h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
         margin-left: 110px;
-        color: #474343;
     }
-
     .footer-sections {
         display: flex;
         justify-content: space-around;
@@ -332,7 +325,6 @@ h2>span {
         margin-top: 40px;
         gap: 320px;
     }
-
     .footer p {
         color: #555;
         margin-bottom: 20px;
@@ -351,23 +343,7 @@ h2>span {
         padding-right: 1.5rem;
         padding-left: 1.5rem;
     }
-    .footer h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        margin-left: 110px;
-        color: #474343;
-    }
-
-    .footer-sections {
-
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top: 40px;
-        gap: 320px;
-    }
 }
-
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .container {
@@ -375,42 +351,10 @@ h2>span {
         padding-right: 2rem;
         padding-left: 2rem;
     }
-    .footer h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        margin-left: 110px;
-        color: #474343;
-    }
-
-    .footer-sections {
-
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top: 40px;
-        gap: 320px;
-    }
 }
-
 /* XXL devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;
     }
-    .footer h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        margin-left: 110px;
-        color: #474343;
-    }
-
-    .footer-sections {
-
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top: 40px;
-        gap: 320px;
-    }
-
 }

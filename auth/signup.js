@@ -4,6 +4,7 @@ const inputPhone = document.getElementById("phone");
 const inputPassword = document.getElementById("password");
 const rePassword = document.getElementById("rePassword");
 const inputRegister = document.getElementById("register");
+const typeInput = document.querySelectorAll('input[name="type"]');
 const nameError = document.getElementById("nameError");
 const emailError = document.getElementById("emailError");
 const phoneError = document.getElementById("phoneError");
@@ -12,7 +13,7 @@ const rePassError = document.getElementById("rePassError");
 const nameRegex = /^[a-zA-Z\s]{3,}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^(\+20|0)?1[0125][0-9]{8}$/;
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{8,}$/; // At least 8 characters, 1 uppercase, 1 lowercase, 1 number
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{8,}$/;
 inputName.addEventListener("keyup", (e) => {
   const name = e.target.value;
   if (name.length < 3) {
@@ -73,6 +74,7 @@ const checkInputs = (input, regex) => {
   return true;
 };
 inputRegister.addEventListener("click", async (e) => {
+
   if (
     !checkInputs(inputName, nameRegex) ||
     !checkInputs(inputEmail, emailRegex) ||
@@ -83,9 +85,19 @@ inputRegister.addEventListener("click", async (e) => {
     alert("Please fill in all fields correctly");
     return;
   }
+  let selectedRole = null;
+  typeInput.forEach((input) => {
+    if (input.checked) {
+      selectedRole = input.value;
+    }
+  });
+  if (!selectedRole) {
+    alert("Please select a role (selling or shopping)");
+    return;
+  }
   inputRegister.setAttribute("disabled", "true");
   inputRegister.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
-  const name = inputName.value;
+  const name = inputName.value.charAt(0).toUpperCase() + inputName.value.trim().slice(1);
   const email = inputEmail.value;
   const phone = inputPhone.value;
   const password = inputPassword.value;
@@ -108,7 +120,7 @@ inputRegister.addEventListener("click", async (e) => {
       email,
       phone,
       password,
-      role: "user",
+      role: selectedRole,
     }),
   });
   if (response.ok) {
@@ -116,5 +128,11 @@ inputRegister.addEventListener("click", async (e) => {
     inputRegister.innerHTML = `Register`;
     alert("Registration successful!");
     window.location.href = "./Login.html";
+  }
+});
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    inputRegister.click();
   }
 });
