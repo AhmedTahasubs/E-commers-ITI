@@ -2,14 +2,13 @@ const inputName = document.getElementById("name");
 const inputEmail = document.getElementById("email");
 const inputPhone = document.getElementById("phone");
 const inputPassword = document.getElementById("password");
-const rePassword = document.getElementById("rePassword");
 const inputRegister = document.getElementById("register");
-const typeInput = document.querySelectorAll('input[name="type"]');
+const inputEdit = document.getElementById("edit");
 const nameError = document.getElementById("nameError");
 const emailError = document.getElementById("emailError");
 const phoneError = document.getElementById("phoneError");
 const passError = document.getElementById("passError");
-const rePassError = document.getElementById("rePassError");
+const selectedRole = document.getElementById("userRole");
 const nameRegex = /^[a-zA-Z\s]{3,}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^(\+20|0)?1[0125][0-9]{8}$/;
@@ -50,19 +49,44 @@ inputPassword.addEventListener("keyup", (e) => {
     passError.style.display = "none";
   }
 });
-rePassword.addEventListener("keyup", (e) => {
-  const rePasswordValue = e.target.value;
-  if (rePasswordValue === "") {
-    rePassError.style.display = "block";
-    rePassError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Passwords do not match`;
-  }
-  if (rePasswordValue !== inputPassword.value) {
-    rePassError.style.display = "block";
-    rePassError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Passwords do not match`;
-  } else {
-    rePassError.style.display = "none";
-  }
-});
+const getUsers = async () => {
+  //deef loader ya 3l2a
+  const response = await fetch(`http://localhost:3000/user`);
+  const data = await response.json();
+  printUserData(data);   
+}
+const printUserData = async (arr) => {
+  const userTable = document.getElementById("userTableBody");
+  userTable.innerHTML = "";
+  arr.forEach((user) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${user.name}</td>
+      <td>${user.email}</td>
+      <td>${user.phone}</td>
+      <td class="role">${user.role}</td>
+      <td class="action">
+      <span class=""><i class="fa-solid fa-user-pen"></i></span>
+      <span class=""><i data-id="${user.id}"  id="deleteUser" class="fa-solid fa-trash-can"></i></span> 
+      </td>
+    `;
+    userTable.appendChild(row);
+  });
+  const deleteButton = document.querySelectorAll("#deleteUser");
+  deleteButton.forEach((button) => {
+    button.addEventListener("click", async (e) => {
+      if (!confirm("Are you sure you want to delete this user?")) {
+        return;
+      }
+      const id = e.target.dataset.id;
+      await fetch(`http://localhost:3000/user/${id}`, {
+        method: "DELETE",
+      });
+      const data = getUsers();
+      printUserData(data);
+    });
+  });
+}
 const checkInputs = (input, regex) => {
   const value = input.value.trim();
   if (value === "") {
@@ -74,25 +98,15 @@ const checkInputs = (input, regex) => {
   return true;
 };
 inputRegister.addEventListener("click", async (e) => {
-
+  e.preventDefault();
   if (
     !checkInputs(inputName, nameRegex) ||
     !checkInputs(inputEmail, emailRegex) ||
     !checkInputs(inputPhone, phoneRegex) ||
-    !checkInputs(inputPassword, passwordRegex) ||
-    !checkInputs(rePassword, passwordRegex)
+    !checkInputs(inputPassword, passwordRegex)
+    || selectedRole.value  == ""
   ) {
     alert("Please fill in all fields correctly");
-    return;
-  }
-  let selectedRole = null;
-  typeInput.forEach((input) => {
-    if (input.checked) {
-      selectedRole = input.value;
-    }
-  });
-  if (!selectedRole) {
-    alert("Please select a role (selling or shopping)");
     return;
   }
   inputRegister.setAttribute("disabled", "true");
@@ -120,13 +134,13 @@ inputRegister.addEventListener("click", async (e) => {
       email,
       phone,
       password,
-      role: selectedRole,
+      role: selectedRole.value,
     }),
   });
   if (response.ok) {
     inputRegister.removeAttribute("disabled");
     inputRegister.innerHTML = `Register`;
-    alert("Registration successful!");
+    alert("User Added successful!");
     window.location.href = "./Login.html";
   }
 });
@@ -135,4 +149,7 @@ window.addEventListener("keydown", (e) => {
     e.preventDefault();
     inputRegister.click();
   }
+});
+window.addEventListener("load", async () => {
+  getUsers();
 });

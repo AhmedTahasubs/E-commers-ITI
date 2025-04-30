@@ -4,25 +4,7 @@ const inputRegister = document.getElementById("register");
 const emailError = document.getElementById("emailError");
 const passError = document.getElementById("passError");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{8,}$/; // At least 8 characters, 1 uppercase, 1 lowercase, 1 number
-inputEmail.addEventListener("keyup", (e) => {
-  const email = e.target.value;
-  if (!emailRegex.test(email)) {
-    emailError.style.display = "block";
-    emailError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Invalid email format`;
-  } else {
-    emailError.style.display = "none";
-  }
-});
-inputPassword.addEventListener("keyup", (e) => {
-  const password = e.target.value;
-  if (!passwordRegex.test(password)) {
-    passError.style.display = "block";
-    passError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number`;
-  } else {
-    passError.style.display = "none";
-  }
-});
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{8,}$/; 
 const checkInputs = (input, regex) => {
   const value = input.value.trim();
   if (value === "") {
@@ -39,8 +21,15 @@ inputRegister.addEventListener("click", async (e) => {
     !checkInputs(inputPassword, passwordRegex)
   ) {
     alert("Please fill in all fields correctly");
+    passError.style.display = "block"; 
+    passError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Please fill in all fields correctly`;
+    setTimeout(() => {
+      passError.style.display = "none"; 
+    }, 2000);
+    inputEmail.value != null? inputEmail.focus() : inputPassword.focus();
     return;
   }
+  passError.style.display = "none";
   inputRegister.setAttribute("disabled", "true");
   inputRegister.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
   const email = inputEmail.value;
@@ -59,4 +48,10 @@ inputRegister.addEventListener("click", async (e) => {
         inputRegister.innerHTML = `Login`;
         window.location.href = "../index.html";
     }
+});
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    inputRegister.click();
+  }
 });

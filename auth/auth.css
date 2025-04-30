@@ -1,5 +1,5 @@
 
-section{
+section.container{
     padding: 20px;
 }
 h2{
@@ -21,11 +21,11 @@ h2{
     background-color: transparent;
     outline: none;
     width: 300px;
+    transition: all 0.3s ease;
 }
 .form div input:focus ,.form div input:not(:placeholder-shown):valid ,.form div input:not(:placeholder-shown):invalid{
     border: 1px solid var(--main-green-color);
     box-shadow: 0 0 5px var(--main-green-color);
-    transition: all 0.3s ease;
 }
 .form div label{
     font-size: 16px;
@@ -74,3 +74,23 @@ p{
     display: none;
     width: 300px;
 }
+section.radio{
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+section.radio span input[type="radio"]{
+    accent-color: var(--main-green-color);
+}
+section.radio span label{
+    transition: all 0.3s ease;
+}
+section.radio span input[type="radio"]:checked + label{
+    color: var(--main-green-color);
+    padding: 10px;
+}
+
+
