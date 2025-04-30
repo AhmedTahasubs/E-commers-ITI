@@ -16,24 +16,25 @@
       "password": "At927531684",
       "role": "user"
     }
+    
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Product 1",
       "price": 10.99,
       "description": "Description for product 1",
       "image": "https://via.placeholder.com/150"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Product 2",
       "price": 20.99,
       "description": "Description for product 2",
       "image": "https://via.placeholder.com/150"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Product 3",
       "price": 30.99,
       "description": "Description for product 3",
@@ -71,7 +72,8 @@
         }
       ],
       "totalPrice": 42.97,
-      "status": "shipped"
+      "status": "shipped",
+      "id": "0c5b"
     },
     {
       "orderId": 2,
@@ -83,7 +85,8 @@
         }
       ],
       "totalPrice": 30.99,
-      "status": "pending"
+      "status": "pending",
+      "id": "264a"
     }
   ]
 }
