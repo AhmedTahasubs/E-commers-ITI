@@ -12,55 +12,50 @@
   "products": [
     {
       "id": "1",
-      "name": "Product 1",
-      "price": 10.99,
-      "description": "Description for product 1",
+      "name": "Lipstick",
+      "price": 50.99,
+      "description": "A long-lasting, rich color lipstick perfect for all-day wear.",
       "image": [
-        "https://example.com/image1.jpg",
-        "https://example.com/image"
-      ]
+        "https://images.pexels.com/photos/2587370/pexels-photo-2587370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "category": "Cosmetics",
+      "quantity": 50,
+      "material": "Mixed Materials",
+      "color": "Pink",
+      "department": "Beauty",
+      "rating": 4.8
     },
     {
       "id": "2",
-      "name": "Product 2",
-      "price": 20.99,
-      "description": "Description for product 2",
+      "name": "Classic Wristwatch",
+      "price": 5000,
+      "description": "A timeless classic wristwatch with a leather strap and analog display, perfect for everyday wear.",
       "image": [
-        "https://example.com/image1.jpg",
-        "https://example.com/image"
-      ]
+        "https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "category": "Accessories",
+      "quantity": 100,
+      "material": "Stainless Steel & Leather",
+      "color": "Brown",
+      "department": "Men",
+      "rating": 4.5
     },
     {
       "id": "3",
-      "name": "Product 3",
-      "price": 30.99,
-      "description": "Description for product 3",
+      "name": "Camera",
+      "price": 15000.99,
+      "description": "Adobe Photoshop CC 2015 (Macintosh)",
       "image": [
-        "https://example.com/image1.jpg",
-        "https://example.com/image"
-      ]
-    },
-    {
-      "id": "4",
-      "name": "Product 4",
-      "price": 50.99,
-      "description": "Description for product 4",
-      "image": [
-        "https://example.com/image1.jpg",
-        "https://example.com/image"
-      ]
-    },
-    {
-      "id": "5",
-      "name": "Product 5",
-      "price": 100.99,
-      "description": "Description for product 5",
-      "image": [
-        "https://example.com/image1.jpg",
-        "https://example.com/image"
-      ]
+        "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "category": "Camera",
+      "quantity": 50,
+      "material": "Mixed Materia",
+      "color": "black",
+      "department": "tech",
+      "rating": 4.8
     }
-
+  
   ],
   "cart": [
     {
