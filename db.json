@@ -39,7 +39,28 @@
         "https://example.com/image1.jpg",
         "https://example.com/image"
       ]
+    },
+    {
+      "id": "4",
+      "name": "Product 4",
+      "price": 50.99,
+      "description": "Description for product 4",
+      "image": [
+        "https://example.com/image1.jpg",
+        "https://example.com/image"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Product 5",
+      "price": 100.99,
+      "description": "Description for product 5",
+      "image": [
+        "https://example.com/image1.jpg",
+        "https://example.com/image"
+      ]
     }
+
   ],
   "cart": [
     {
