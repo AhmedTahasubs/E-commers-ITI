@@ -22,14 +22,13 @@ fetch(`http://localhost:3000/products/${productId}`)
     document.querySelector('.info h2').textContent = product.name;
     document.querySelector('.info .price').textContent = `${product.price} EGP`;
     document.querySelector('.info .rating').textContent = `★★★★☆ ${product.rating || 4.8}`;
-    // document.querySelector('.details').innerHTML = `
-    //   <p><strong>Brand:</strong> ${product.brand || 'N/A'}</p>
-    //   <p><strong>Category:</strong> ${product.category || 'General'}</p>
-    //   <p><strong>Quantity:</strong> ${product.quantity || 0}</p>
-    //   <p><strong>Material:</strong> ${product.material || 'Unknown'}</p>
-    //   <p><strong>Colour:</strong> ${product.color || 'Multicolour'}</p>
-    //   <p><strong>Department:</strong> ${product.department || 'N/A'}</p>
-    // `;
+    document.querySelector('.details').innerHTML = `
+      <p><strong>Category:</strong> ${product.category || 'General'}</p>
+      <p><strong>Quantity:</strong> ${product.quantity || 0}</p>
+      <p><strong>Material:</strong> ${product.material || 'Unknown'}</p>
+      <p><strong>Colour:</strong> ${product.color || 'Multicolour'}</p>
+      <p><strong>Department:</strong> ${product.department || 'N/A'}</p>
+    `;
   })
   .catch(error => {
     console.error('Error loading product:', error);
@@ -50,7 +49,7 @@ fetch(`http://localhost:3000/products/${productId}`)
             <i class="fas fa-shopping-cart"></i>
             <i class="fas fa-eye" data-id="${product.id}"></i> 
             </div>
-            <div class="category">General</div>
+            <div class="category">${product.category}</div>
             <div class="title">${product.name}</div>
              <div class="price">${product.price} EGP</div> 
             <div class="rating">

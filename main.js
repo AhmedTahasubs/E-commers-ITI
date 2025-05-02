@@ -25,7 +25,7 @@ fetch('http://localhost:3000/products')
                 <i class="fas fa-shopping-cart"></i>
                 <i class="fas fa-eye" data-id="${product.id}"></i> 
                 </div>
-                <div class="category">General</div>
+                <div class="category">${product.category}</div>
                 <div class="title">${product.name}</div>
                  <div class="price">${product.price} EGP</div> 
                 <div class="rating">
