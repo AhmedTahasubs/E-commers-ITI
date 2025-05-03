@@ -66,13 +66,14 @@ const printUserData = async (arr) => {
       <td>${user.phone}</td>
       <td class="role">${user.role}</td>
       <td class="action">
-      <span class=""><i class="fa-solid fa-user-pen"></i></span>
-      <span class=""><i data-id="${user.id}"  id="deleteUser" class="fa-solid fa-trash-can"></i></span> 
+      <span class=""><i data-id="${user.id}" id="editUser" class="fa-solid fa-user-pen"></i></span>
+      <span class=""><i data-id="${user.id}" id="deleteUser" class="fa-solid fa-trash-can"></i></span> 
       </td>
     `;
     userTable.appendChild(row);
   });
   const deleteButton = document.querySelectorAll("#deleteUser");
+  const editButton = document.querySelectorAll("#editUser");
   deleteButton.forEach((button) => {
     button.addEventListener("click", async (e) => {
       if (!confirm("Are you sure you want to delete this user?")) {
@@ -86,6 +87,22 @@ const printUserData = async (arr) => {
       printUserData(data);
     });
   });
+  editButton.forEach((button) => {
+    button.addEventListener("click", async (e) => {
+      const id = e.target.dataset.id;
+      const response = await fetch(`http://localhost:3000/user/${id}`);
+      const data = await response.json();
+      inputName.value = data.name;
+      inputEmail.value = data.email;
+      inputPhone.value = data.phone;
+      inputPassword.value = data.password;
+      selectedRole.value = data.role;
+      inputRegister.style.display = "none";
+      inputEdit.style.display = "block";
+      inputEdit.setAttribute("data-id", id);
+    });
+  });
+
 }
 const checkInputs = (input, regex) => {
   const value = input.value.trim();
@@ -143,6 +160,54 @@ inputRegister.addEventListener("click", async (e) => {
     alert("User Added successful!");
     window.location.href = "./Login.html";
   }
+});
+inputEdit.addEventListener("click", async (e) => { 
+    e.preventDefault();
+    if (
+      !checkInputs(inputName, nameRegex) ||
+      !checkInputs(inputEmail, emailRegex) ||
+      !checkInputs(inputPhone, phoneRegex) ||
+      !checkInputs(inputPassword, passwordRegex)
+      || selectedRole.value  == ""
+    ) {
+      alert("Please fill in all fields correctly");
+      return;
+    }
+    inputEdit.setAttribute("disabled", "true");
+    inputEdit.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+    const id = inputEdit.getAttribute("data-id");
+    const name = inputName.value.charAt(0).toUpperCase() + inputName.value.trim().slice(1);
+    const email = inputEmail.value;
+    const phone = inputPhone.value;
+    const password = inputPassword.value;
+    let response = await fetch(`http://localhost:3000/user`);
+    const data = await response.json();
+    const user = data.find((user) => user.email === email && user.id != id);
+    if (user) {
+      alert("Email already exists");
+      inputEdit.removeAttribute("disabled");
+      inputEdit.innerHTML = `Edit`;
+      return;
+    }
+    response = await fetch(`http://localhost:3000/user/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        password,
+        role: selectedRole.value,
+      }),
+    });
+    if (response.ok) {
+      inputEdit.removeAttribute("disabled");
+      inputEdit.innerHTML = `Edit`;
+      alert("User Updated successful!");
+      window.location.href = "./Login.html";
+    }
 });
 window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {

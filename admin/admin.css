@@ -33,7 +33,11 @@ select#userRole:focus{
     box-shadow: 0 0 5px var(--main-green-color);
 }
 .btn-container{
-text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-block: 20px;
 }
 table{
     width: 100%;
@@ -82,4 +86,7 @@ td.action span i.fa-trash-can{
 td.action span i.fa-trash-can:hover{
     background-color: red;
     color: white;
+}
+#edit{
+    display: none;
 }

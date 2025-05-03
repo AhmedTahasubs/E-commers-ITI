@@ -1,17 +1,18 @@
 {
   "user": [
     {
-      "id": "d32d",
       "name": "Ahmed Taha",
-      "email": "atsss0811@gmail.com",
-      "phone": "01113795716",
+      "email": "atsss0815@gmail.com",
+      "phone": "01007532799",
       "password": "At927531684",
-      "role": "admin"
+      "role": "seller",
+      "id": "4035"
     }
   ],
   "products": [
     {
-      "id": "1",
+      "userId": 4035,
+      "productId": 1,
       "name": "Lipstick",
       "price": 50.99,
       "description": "A long-lasting, rich color lipstick perfect for all-day wear.",
@@ -55,7 +56,6 @@
       "department": "tech",
       "rating": 4.8
     }
-  
   ],
   "cart": [
     {
@@ -72,7 +72,8 @@
           "productId": 2,
           "quantity": 1
         }
-      ]
+      ],
+      "id": "eedb"
     }
   ],
   "orders": [
