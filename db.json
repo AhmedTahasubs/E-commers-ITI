@@ -12,7 +12,7 @@
   "products": [
     {
       "userId": 4035,
-      "productId": 1,
+      "id": 1,
       "name": "Lipstick",
       "price": 50.99,
       "description": "A long-lasting, rich color lipstick perfect for all-day wear.",
@@ -59,21 +59,17 @@
   ],
   "cart": [
     {
+      "id": "9a18",
       "userId": 1,
-      "cartId": 1,
-      "totalPrice": 42.97,
-      "totalItems": 3,
+      "cartId": 1746282361815,
+      "totalPrice": 50.99,
+      "totalItems": 1,
       "cartProducts": [
         {
           "productId": 1,
-          "quantity": 2
-        },
-        {
-          "productId": 2,
           "quantity": 1
         }
-      ],
-      "id": "eedb"
+      ]
     }
   ],
   "orders": [
