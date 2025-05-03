@@ -27,7 +27,7 @@
       "rating": 4.8
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Classic Wristwatch",
       "price": 5000,
       "description": "A timeless classic wristwatch with a leather strap and analog display, perfect for everyday wear.",
@@ -42,7 +42,7 @@
       "rating": 4.5
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Camera",
       "price": 15000.99,
       "description": "Adobe Photoshop CC 2015 (Macintosh)",
