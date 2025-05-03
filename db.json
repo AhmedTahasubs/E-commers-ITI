@@ -11,7 +11,7 @@
   ],
   "products": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Lipstick",
       "price": 50.99,
       "description": "A long-lasting, rich color lipstick perfect for all-day wear.",
@@ -26,7 +26,7 @@
       "rating": 4.8
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Classic Wristwatch",
       "price": 5000,
       "description": "A timeless classic wristwatch with a leather strap and analog display, perfect for everyday wear.",
@@ -41,7 +41,7 @@
       "rating": 4.5
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Camera",
       "price": 15000.99,
       "description": "Adobe Photoshop CC 2015 (Macintosh)",
@@ -55,26 +55,8 @@
       "department": "tech",
       "rating": 4.8
     }
-  
   ],
-  "cart": [
-    {
-      "userId": 1,
-      "cartId": 1,
-      "totalPrice": 42.97,
-      "totalItems": 3,
-      "cartProducts": [
-        {
-          "productId": 1,
-          "quantity": 2
-        },
-        {
-          "productId": 2,
-          "quantity": 1
-        }
-      ]
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "orderId": 1,

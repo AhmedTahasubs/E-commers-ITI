@@ -7,9 +7,79 @@
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="./features.css">
+    <link rel="stylesheet" href="cart.css">
     <title>Cart</title>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="buttons">
+          <div class="logo">
+            <i class="fa fa-shopping-cart green-icon"></i>
+            <span class="brand">Fresh<span class="bold">Cart</span></span>
+          </div>
+          <div id="menu_nav" class="menu-toggle">
+            <i class="fa fa-bars"></i>
+          </div>
+        </div>
+        <ul id="links" class="nav-links">
+          <li><a href="../index.html" class="active">Home</a></li>
+          <li><a href="#">Orders</a></li>
+          <li>
+            <a href="#">
+              <i class="fa fa-shopping-cart green-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-sign-out-alt"></i></a>
+          </li>
+        </ul>
+      </nav>
+    
+
+    <h1 style="text-align:center;">Your Cart</h1>
+  <div id="cart-container"></div>
+  <div id="total-container">
+    <h3>Total Price: <span id="total-price">EGP 0</span></h3>
+  </div>
+
+
+  <footer class="footer">
+    <h2><span class="green-bar">|</span>Get the FreshCart App</h2>
+    <p>We Will Send You a Link, open it on your phone to download the app</p>
+
+    <div class="email-form">
+      <input type="email" placeholder="Email..." />
+      <button class="btm_email">Share App Link</button>
+    </div>
+
+    <div class="footer-sections">
+      <div class="payments">
+        <h4>Payment Partners</h4>
+        <a href="#"><img src="images/amazon-pay-C6yg0mFR.png" alt="Amazon Pay" width="80px" height="30px"></a>
+        <a href="#"><img src="images/American-Express-Color-BA04NtD8.png" alt="American Express" height="30"></a>
+        <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"
+            alt="MasterCard"></a>
+        <a href=""> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"></a>
+      </div>
+
+      <div class="apps">
+        <h4>Get deliveries with FreshCart</h4>
+        <a href="#"><i class="fa-brands fa-google-pay"></i></a>
+        <a href="#"><i class="fa-brands fa-app-store-ios"></i></a>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
     
 </body>
 </html>
