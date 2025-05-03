@@ -102,7 +102,6 @@ const printUserData = async (arr) => {
       inputEdit.setAttribute("data-id", id);
     });
   });
-
 }
 const checkInputs = (input, regex) => {
   const value = input.value.trim();
