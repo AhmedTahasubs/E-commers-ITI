@@ -1,0 +1,104 @@
+h2,h3{
+margin-bottom: 10px;
+font-size: 50px;
+}
+h3{
+font-size: 40px;
+color: var(--main-green-color);
+text-align: center;
+}
+p.text{
+display: block;
+text-align: center;
+width: 100%;
+margin-inline: auto;
+color:var(--main-green-color);
+font-size: 25px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+textarea{
+  min-height: 100px;
+  min-width: 90%;
+  resize: vertical;
+  transition: none;
+  font-size: 18px;
+}
+.btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-block: 20px;
+}
+#edit{
+  display: none;
+}
+.productList{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  margin-block: 20px;
+}
+.productList .product-card{
+  width: calc(50% - 20px);
+  padding: 10px;
+  background-color: #08c4c473;
+  border-radius: 10px;
+}
+.productList .product-card div.img-container{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.productList .product-card img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 10px;
+}
+.productList .product-card .img-container{
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productList .product-card .product-details{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-block: 10px;
+}
+.productList .product-card .product-details h5{
+  font-size: 18px;
+  color: var(--main-green-color);
+  text-align: center;
+}
+.productList .product-card .product-details span{
+  font-size: 16px;
+  color: var(--main-green-color);
+  text-align: center;
+}
+.productList .product-card .product-details div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen  and (min-width: 768px) {
+  .productList .product-card{
+    width: calc(33% - 20px);
+  }
+}
+@media screen  and (min-width: 992px) {
+  .productList .product-card{
+    width: calc(25% - 20px);
+  }
+}

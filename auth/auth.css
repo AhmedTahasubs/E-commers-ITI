@@ -13,7 +13,7 @@ h2{
     margin-inline: auto;
     width: fit-content;
 }
-.form div input{
+.form div input ,textarea{
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
@@ -23,7 +23,7 @@ h2{
     width: 300px;
     transition: all 0.3s ease;
 }
-.form div input:focus ,.form div input:not(:placeholder-shown):valid ,.form div input:not(:placeholder-shown):invalid{
+.form div input:focus ,.form div input:not(:placeholder-shown):valid ,.form div input:not(:placeholder-shown):invalid , textarea:focus ,textarea:not(:placeholder-shown):valid , textarea:not(:placeholder-shown):invalid{
     border: 1px solid var(--main-green-color);
     box-shadow: 0 0 5px var(--main-green-color);
 }
@@ -36,7 +36,7 @@ h2{
     transition: all 0.3s ease;
     color: #999;
 }
-.form div input:focus + label,.form div input:not(:placeholder-shown):valid + label,.form div input:not(:placeholder-shown):invalid + label  {
+.form div input:focus + label,.form div input:not(:placeholder-shown):valid + label,.form div input:not(:placeholder-shown):invalid + label, textarea:focus + label,textarea:not(:placeholder-shown):valid + label, textarea:not(:placeholder-shown):invalid + label{
     top: 0;
     background-color: white;
     left: 5px;

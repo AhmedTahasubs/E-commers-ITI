@@ -73,6 +73,18 @@ const checkInputs = (input, regex) => {
   }
   return true;
 };
+const resetInputs = () => {
+  inputName.value = "";
+  inputEmail.value = "";
+  inputPhone.value = "";
+  inputPassword.value = "";
+  rePassword.value = "";
+  nameError.style.display = "none";
+  emailError.style.display = "none";
+  phoneError.style.display = "none";
+  passError.style.display = "none";
+  rePassError.style.display = "none";
+};
 inputRegister.addEventListener("click", async (e) => {
 
   if (
@@ -123,11 +135,14 @@ inputRegister.addEventListener("click", async (e) => {
       role: selectedRole,
     }),
   });
+  
   if (response.ok) {
     inputRegister.removeAttribute("disabled");
     inputRegister.innerHTML = `Register`;
     alert("Registration successful!");
+    resetInputs();
     window.location.href = "./Login.html";
+
   }
 });
 window.addEventListener("keydown", (e) => {

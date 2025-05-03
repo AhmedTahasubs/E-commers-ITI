@@ -6,10 +6,73 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../auth/auth.css">
     <link rel="stylesheet" href="./seller.css">
     <title>Seller</title>
 </head>
 <body>
-    
+    <main class="container">
+        <header class="main-content">
+            <h2>Welcome to the Seller Panel!</h2>
+            <p class="text">Manage your Products</p>
+        </header>
+        <section>
+            <h3>Product Management</h3>
+            <div class="form">
+                <div>
+                    <input placeholder=" " id="name" name="name" type="text" required>
+                    <label  for="name">Product Name</label>
+                    <p id="nameError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="price" name="price" type="number" required/>
+                    <label  for="price">Product Price</label>
+                    <p id="priceError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="category" name="category" type="text" required>
+                    <label  for="category">Category</label>
+                    <p id="cateError"></p>
+                </div>
+                <div>
+                    <textarea placeholder=" " id="description" name="description" type="text" required></textarea>
+                    <label  for="description">Product Description</label>
+                    <p id="descError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="image" name="image" type="text" required>
+                    <label  for="image">Image URL</label>
+                    <p id="imageError"></p>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="button" id="add" class="btn">Add Product</button>
+                <button type="button" id="edit" class="btn">Edit Product</button>
+            </div>
+        </section>
+        <section>
+            <h2>Your Products</h2>
+            <div id="productList" class="productList">
+                <!-- <div class="product-card">
+                    <div>
+                        <div class="img-container">
+                            <img src="https://ecommerce.routemisr.com/Route-Academy-products/1680402838276-cover.jpeg" alt="Product Image">
+                        </div>
+                        <div class="product-details">
+                            <h5>Product Name</h5>
+                            <span>$XX.XX</span>
+                            <span>Category Name</span>
+                            <span>Product description goes here.</span>
+                            <div>
+                                <button class="btn">Edit</button>
+                                <button class="btn">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+    <script src="./seller.js"></script>
 </body>
 </html>
