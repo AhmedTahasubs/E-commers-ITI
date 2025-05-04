@@ -113,6 +113,7 @@ inputAdd.addEventListener("click", async (e) => {
     image: inputImage.value,
     createdAt: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
     rating: 0,
+    status:"bending",
   }
   const req = await fetch("http://localhost:3000/products", {
     method: "POST",
@@ -152,11 +153,9 @@ inputEdit.addEventListener("click", async (e) => {
     category: inputCategory.value,
     description: inputDesc.value,
     image: inputImage.value,
-    createdAt: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
-    rating: 0,
   }
   const req = await fetch(`http://localhost:3000/products/${id}`, {
-    method: "PUT",
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
@@ -202,6 +201,7 @@ const renderProducts = (products) => {
           <span>$${product.price}</span>
           <span>${product.category}</span>
           <span>${product.description.split(" ").slice(0, 5).join(" ")}...</span>
+          <span class="status ${product.status == "bending"?" " : "approved"}">${product.status.charAt(0).toUpperCase() + product.status.trim().slice(1)}</span>
           <div>
             <button data-id="${product.id}" id="editProduct" class="btn">Edit</button>
             <button data-id="${product.id}" id="deleteProduct" class="btn">Delete</button>
@@ -233,7 +233,6 @@ const renderProducts = (products) => {
       }
     })
   })
-
   editButton.forEach((button) => {
     button.addEventListener("click", async (e) => {
       const id = e.target.dataset.id
@@ -247,6 +246,7 @@ const renderProducts = (products) => {
       inputAdd.style.display = "none"
       inputEdit.style.display = "block"
       inputEdit.setAttribute("data-id", id)
+      document.querySelector(".card").scrollIntoView({ behavior: "smooth" })
     })
   })
 }
