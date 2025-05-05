@@ -10,69 +10,112 @@
     <title>Signup</title>
 </head>
 <body>
-
-
     <nav class="navbar">
-        <div class="buttons">
-          <div class="logo">
+        <div class="logo">
             <i class="fa fa-shopping-cart green-icon"></i>
             <span class="brand">Fresh<span class="bold">Cart</span></span>
-          </div>
-          <div id="menu_nav" class="menu-toggle">
+        </div>
+        <div id="menu_nav" class="menu-toggle">
             <i class="fa fa-bars"></i>
-          </div>
         </div>
-      </nav>
+    </nav>
     
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>
+                <i class="fa-regular fa-circle-user"></i>
+                Register now
+            </h2>
+        </div>
+        <div class="auth-body">
+            <div class="form">
+                <div>
+                    <input placeholder=" " id="name" name="name" type="text" required>
+                    <label for="name">Name</label>
+                    <p id="nameError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="email" name="email" type="email" required>
+                    <label for="email">Email</label>
+                    <p id="emailError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="phone" name="phone" type="tel" required>
+                    <label for="phone">Phone</label>
+                    <p id="phoneError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="password" name="password" type="password" required>
+                    <label for="password">Password</label>
+                    <i id="showPass" class="fa-solid fa-eye-slash"></i>
+                    <p id="passError"> Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number
 
-
-    <section class="container">
-        <h2>
-            <i class="fa-regular fa-circle-user"></i>
-            Register now
-        </h2>
-        <div class="form">
-            <div>
-                <input placeholder=" " id="name" name="name" type="text" required>
-                <label  for="name">Name</label>
-                <p id="nameError"></p>
-            </div>
-            <div>
-                <input placeholder=" " id="email" name="email" type="email" required>
-                <label  for="email">Email</label>
-                <p id="emailError"></p>
-            </div>
-            <div>
-                <input placeholder=" " id="phone" name="phone" type="tel" required>
-                <label  for="phone">Phone</label>
-                <p id="phoneError"></p>
-            </div>
-            <div>
-                <input placeholder=" " id="password" name="password" type="password" required>
-                <label  for="password">Password</label>
-                <p id="passError"></p>
-            </div>
-            <div>
-                <input placeholder=" " id="rePassword" name="rePassword" type="password" required>
-                <label  for="rePassword">Confirm Password</label>
-                <p id="rePassError"></p>
-            </div>
-            <section class="radio">
-                <h3>What are you looking for?</h3>
-                <span>
-                    <input type="radio"  name="type" value="seller"  id="seller" required>
-                    <label for="seller">Selling</label>
-                </span>
-                <span>
-                    <input type="radio" name="type" value="customer"  id="customer" required>
-                    <label for="customer">Shopping</label>
-                </span>
-            </section>
-            <div class="btns">
-                <button type="button" id="register" class="btn">Register</button>
+                    </p>
+                </div>
+                <div>
+                    <input placeholder=" " id="rePassword" name="rePassword" type="password" required>
+                    <label for="rePassword">Confirm Password</label>
+                    <p id="rePassError"></p>
+                </div>
+                
+                <section class="radio">
+                    <h3>What are you looking for?</h3>
+                    <span>
+                        <input type="radio" name="type" value="seller" id="seller" required>
+                        <label for="seller">Selling</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="type" value="customer" id="customer" required>
+                        <label for="customer">Shopping</label>
+                    </span>
+                </section>
+                
+                <div class="btns">
+                    <button type="button" id="register" class="btn">Register</button>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="auth-footer">
+            Already have an account? <a href="Login.html">Log in</a>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About FreshCart</h3>
+                <p>FreshCart is your one-stop destination for fresh groceries, quality products, and exceptional shopping experience.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 FreshCart. All rights reserved.</span>
+        </div>
+    </footer>
+    
     <script src="./signup.js"></script>
 </body>
 </html>

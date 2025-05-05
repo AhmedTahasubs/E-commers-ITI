@@ -14,6 +14,7 @@ const nameRegex = /^[a-zA-Z\s]{3,}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^(\+20|0)?1[0125][0-9]{8}$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{8,}$/;
+const showPass = document.getElementById("showPass");
 inputName.addEventListener("keyup", (e) => {
   const name = e.target.value;
   if (name.length < 3) {
@@ -45,9 +46,11 @@ inputPassword.addEventListener("keyup", (e) => {
   const password = e.target.value;
   if (!passwordRegex.test(password)) {
     passError.style.display = "block";
+    showPass.style.top= "26%";
     passError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number`;
   } else {
     passError.style.display = "none";
+    showPass.style.top= "50%";
   }
 });
 rePassword.addEventListener("keyup", (e) => {
@@ -149,5 +152,18 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
     inputRegister.click();
+  }
+});
+showPass.addEventListener("click", () => {
+  if (inputPassword.type === "password") {
+    inputPassword.type = "text";
+    rePassword.type = "text";
+    showPass.classList.remove("fa-eye-slash");
+    showPass.classList.add("fa-eye");
+  } else {
+    rePassword.type = "password";
+    inputPassword.type = "password";
+    showPass.classList.remove("fa-eye");
+    showPass.classList.add("fa-eye-slash");
   }
 });

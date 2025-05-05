@@ -5,6 +5,8 @@ const emailError = document.getElementById("emailError");
 const passError = document.getElementById("passError");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{8,}$/; 
+const showPass = document.getElementById("showPass");
+
 const checkInputs = (input, regex) => {
   const value = input.value.trim();
   if (value === "") {
@@ -55,3 +57,16 @@ window.addEventListener("keydown", (e) => {
     inputRegister.click();
   }
 });
+showPass.addEventListener("click", () => {
+  if (inputPassword.type === "password") {
+    inputPassword.type = "text";
+    showPass.classList.remove("fa-eye-slash");
+    showPass.classList.add("fa-eye");
+  }
+  else {
+    inputPassword.type = "password";
+    showPass.classList.remove("fa-eye");
+    showPass.classList.add("fa-eye-slash");
+  }
+})
+

@@ -9,12 +9,20 @@
       "id": "3b45"
     },
     {
-      "id": "838d",
       "name": "Ahmed Taha",
       "email": "ahmedtahaamuhammed@gmail.com",
       "phone": "01113795716",
       "password": "At927531684",
-      "role": "admin"
+      "role": "customer",
+      "id": "838d"
+    },
+    {
+      "id": "15dc",
+      "name": "Ahmed Taha",
+      "email": "atsss08ase11@gmail.com",
+      "phone": "01113785716",
+      "password": "At927531684",
+      "role": "customer"
     }
   ],
   "products": [
