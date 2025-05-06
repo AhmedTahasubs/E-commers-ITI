@@ -36,7 +36,7 @@ inputRegister.addEventListener("click", async (e) => {
   inputRegister.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
   const email = inputEmail.value;
   const password = inputPassword.value;
-  const response = await fetch(`http://localhost:3000/user`);
+  const response = await fetch(`http://localhost:3000/users`);
   const data = await response.json();
     const user = data.find((user) => user.email === email && user.password === password);
     if (!user) {

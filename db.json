@@ -1,13 +1,5 @@
 {
-  "user": [
-    {
-      "name": "Ahmed Taha",
-      "email": "atsss0811@gmail.com",
-      "phone": "01113795716",
-      "password": "At927531684",
-      "role": "admin",
-      "id": "3b45"
-    },
+  "users": [
     {
       "name": "Ahmed Taha",
       "email": "ahmedtahaamuhammed@gmail.com",
@@ -31,6 +23,14 @@
       "phone": "01090720075",
       "password": "123456789Aa",
       "role": "customer"
+    },
+    {
+      "id": "1ab9",
+      "name": "Ahmed Taha",
+      "email": "ahmedtahaamuhammedd@gmail.com",
+      "phone": "01113785716",
+      "password": "At927531684",
+      "role": "admin"
     }
   ],
   "products": [
@@ -92,7 +92,7 @@
       "image": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "createdAt": "2025/05/06",
       "rating": 0,
-      "status": "bending"
+      "status": "approved"
     }
   ],
   "carts": [],

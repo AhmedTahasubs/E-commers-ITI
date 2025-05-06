@@ -63,7 +63,7 @@ inputPassword.addEventListener("keyup", (e) => {
 })
 const getUsers = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/user`)
+    const response = await fetch(`http://localhost:3000/users`)
     const data = await response.json()
     printUserData(data)
   } catch (error) {
@@ -108,7 +108,7 @@ const setupActionButtons = () => {
       }
       const id = e.target.dataset.id
       try {
-        await fetch(`http://localhost:3000/user/${id}`, {
+        await fetch(`http://localhost:3000/users/${id}`, {
           method: "DELETE",
         })
         getUsers()
@@ -121,7 +121,7 @@ const setupActionButtons = () => {
     button.addEventListener("click", async (e) => {
       const id = e.target.dataset.id
       try {
-        const response = await fetch(`http://localhost:3000/user/${id}`)
+        const response = await fetch(`http://localhost:3000/users/${id}`)
         const data = await response.json()
         inputName.value = data.name
         inputEmail.value = data.email
@@ -172,7 +172,7 @@ inputRegister.addEventListener("click", async (e) => {
 
   try {
     // Check if email exists
-    let response = await fetch(`http://localhost:3000/user`)
+    let response = await fetch(`http://localhost:3000/users`)
     const data = await response.json()
     const user = data.find((user) => user.email === email)
 
@@ -184,7 +184,7 @@ inputRegister.addEventListener("click", async (e) => {
     }
 
     // Create user
-    response = await fetch("http://localhost:3000/user", {
+    response = await fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -245,7 +245,7 @@ inputEdit.addEventListener("click", async (e) => {
 
   try {
     // Check if email exists for another user
-    let response = await fetch(`http://localhost:3000/user`)
+    let response = await fetch(`http://localhost:3000/users`)
     const data = await response.json()
     const user = data.find((user) => user.email === email && user.id != id)
 
@@ -257,7 +257,7 @@ inputEdit.addEventListener("click", async (e) => {
     }
 
     // Update user
-    response = await fetch(`http://localhost:3000/user/${id}`, {
+    response = await fetch(`http://localhost:3000/users/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

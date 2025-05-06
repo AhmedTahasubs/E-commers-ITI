@@ -116,7 +116,7 @@ inputRegister.addEventListener("click", async (e) => {
   const email = inputEmail.value;
   const phone = inputPhone.value;
   const password = inputPassword.value;
-  let response = await fetch(`http://localhost:3000/user`);
+  let response = await fetch(`http://localhost:3000/users`);
   const data = await response.json();
   const user = data.find((user) => user.email === email);
   if (user) {
@@ -125,7 +125,7 @@ inputRegister.addEventListener("click", async (e) => {
     inputRegister.innerHTML = `Register`;
     return;
   }
-  response = await fetch("http://localhost:3000/user", {
+  response = await fetch("http://localhost:3000/users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
