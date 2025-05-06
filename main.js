@@ -48,46 +48,62 @@ fetch("http://localhost:3000/products")
                 </div>
             `
       container.appendChild(card)
-
-      // Add to cart functionality
       card.querySelector(".cart-btn").addEventListener("click", () => {
-        const userId = 1
-        fetch(`http://localhost:3000/cart?userId=${userId}`)
+        const userId = 1; // ثابت مؤقت
+      
+        fetch(`http://localhost:3000/carts?userId=${userId}`)
           .then((res) => res.json())
           .then((data) => {
-            let userCart = data[0]
+            let userCart = data[0];
+      
             if (!userCart) {
-              userCart = {
+              // سلة جديدة
+              const newCart = {
                 userId,
-                id: Date.now(),
-                totalPrice: Number.parseFloat(product.price),
+                totalPrice: parseFloat(product.price),
                 totalItems: 1,
                 cartProducts: [{ productId: product.id, quantity: 1 }],
-              }
-              fetch("http://localhost:3000/cart", {
+              };
+      
+              fetch("http://localhost:3000/carts", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(userCart),
+                body: JSON.stringify(newCart),
               })
+                .then((res) => res.json())
+                .then((createdCart) => {
+                  console.log("New cart created:", createdCart);
+                  alert("Product added to cart!");
+                })
+                .catch((err) => console.error("Error creating cart:", err));
             } else {
-              const existingProduct = userCart.cartProducts.find((p) => p.productId === product.id)
+              // سلة موجودة - تعديل
+              const existingProduct = userCart.cartProducts.find(
+                (p) => p.productId === product.id
+              );
+      
               if (existingProduct) {
-                existingProduct.quantity += 1
+                existingProduct.quantity += 1;
               } else {
-                userCart.cartProducts.push({ productId: product.id, quantity: 1 })
+                userCart.cartProducts.push({ productId: product.id, quantity: 1 });
               }
-              userCart.totalItems += 1
-              userCart.totalPrice += Number.parseFloat(product.price)
-
-              fetch(`http://localhost:3000/cart/${userCart.id}`, {
+      
+              userCart.totalItems += 1;
+              userCart.totalPrice += parseFloat(product.price);
+      
+              fetch(`http://localhost:3000/carts/${userCart.id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(userCart),
               })
+                .then(() => alert("Product added to cart!"))
+                .catch((err) => console.error("Error updating cart:", err));
             }
-            alert("Product added to cart!")
           })
-      })
+          .catch((err) => console.error("Error fetching cart:", err));
+      });
+      
+
 
       // View product details functionality
       card.querySelector(".view").addEventListener("click", (e) => {

@@ -23,6 +23,14 @@
       "phone": "01113785716",
       "password": "At927531684",
       "role": "customer"
+    },
+    {
+      "id": "8c55",
+      "name": "Ahmedhammad",
+      "email": "ah@gmail.com",
+      "phone": "01090720075",
+      "password": "123456789Aa",
+      "role": "customer"
     }
   ],
   "products": [
@@ -87,20 +95,7 @@
       "status": "bending"
     }
   ],
-  "cart": [
-    {
-      "id": "1746549378096",
-      "userId": 1,
-      "totalPrice": 10250,
-      "totalItems": 1,
-      "cartProducts": [
-        {
-          "productId": "d96f",
-          "quantity": 1
-        }
-      ]
-    }
-  ],
+  "carts": [],
   "orders": [
     {
       "orderId": 1,
