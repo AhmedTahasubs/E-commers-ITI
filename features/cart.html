@@ -5,43 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./features.css">
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="./cart.css">
     <title>Cart</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="buttons">
-          <div class="logo">
-            <i class="fa fa-shopping-cart green-icon"></i>
-            <span class="brand">Fresh<span class="bold">Cart</span></span>
-          </div>
-          <div id="menu_nav" class="menu-toggle">
-            <i class="fa fa-bars"></i>
-          </div>
-        </div>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <i class="fa fa-shopping-cart green-icon"></i>
+        <span class="brand">Fresh<span class="bold">Cart</span></span>
+      </div>
+      <div class="nav-actions">
         <ul id="links" class="nav-links">
-          <li><a href="../index.html" class="active">Home</a></li>
+          <li><a href="#" class="active">Home</a></li>
           <li><a href="#">Orders</a></li>
-          <li>
-            <a href="#">
-              <i class="fa fa-shopping-cart green-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-sign-out-alt"></i></a>
-          </li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Deals</a></li>
         </ul>
-      </nav>
-    
+        <div class="nav-icons">
+          <a href="features/cart.html" class="icon-btn" title="Cart">
+            <i class="fa fa-shopping-cart"></i>
+          </a>
+          <a href="#" class="icon-btn" title="Logout">
+            <i class="fa fa-sign-out-alt"></i>
+          </a>
+        </div>
+        <button id="menu_nav" class="menu-toggle" aria-label="Toggle menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <h1 style="text-align:center;">Your Cart</h1>
+  <h1 style="text-align:center;">Your Cart</h1>
   <div id="cart-container"></div>
   <div id="total-container">
     <h3>Total Price: <span id="total-price">EGP 0</span></h3>
   </div>
-
   <footer class="page-footer">
     <div class="footer-content">
         <div class="footer-section">
@@ -76,8 +76,7 @@
     <div class="footer-bottom">
         <span>&copy; 2025 FreshCart. All rights reserved.</span>
     </div>
-</footer>
+  </footer>
   <script src="cart.js"></script>
-    
 </body>
 </html>

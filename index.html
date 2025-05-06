@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>FreshCart - Home</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/all.min.css">
@@ -12,162 +12,93 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="buttons">
-      <div class="logo">
-        <i class="fa fa-shopping-cart green-icon"></i>
-        <span class="brand">Fresh<span class="bold">Cart</span></span>
-      </div>
-      <div id="menu_nav" class="menu-toggle">
-        <i class="fa fa-bars"></i>
-      </div>
-    </div>
-    <ul id="links" class="nav-links">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">Orders</a></li>
-      <li>
-        <a href="features/cart.html">
+  <div class="page-container">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="logo">
           <i class="fa fa-shopping-cart green-icon"></i>
-        </a>
-      </li>
-      <li>
-        <a href="#"><i class="fa fa-sign-out-alt"></i></a>
-      </li>
-    </ul>
-  </nav>
-  <section class="container full-height">
-    <h2 class="h2">Products</h2>
-    <div class="products">
-      <!-- <div class="card">
-        <img src="images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-        <div class="actions">
-
-          <i class="fas fa-shopping-cart"></i>
-          <i class="fas fa-eye"></i>
+          <span class="brand">Fresh<span class="bold">Cart</span></span>
         </div>
-        <div class="category">Women's Fashion</div>
-        <div class="title">Woman Shawl</div>
-        <div class="price">191 EGP</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          4.8
-        </div> -->
-      <!-- </div>
-
-      <div class="card">
-        <img src="images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-        <div class="actions">
-
-          <i class="fas fa-shopping-cart"></i>
-          <i class="fas fa-eye"></i>
-        </div>
-        <div class="category">Women's Fashion</div>
-        <div class="title">Woman Shawl</div>
-        <div class="price">191 EGP</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          4.8
+        <div class="nav-actions">
+          <ul id="links" class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Deals</a></li>
+          </ul>
+          <div class="nav-icons">
+            <a href="features/cart.html" class="icon-btn" title="Cart">
+              <i class="fa fa-shopping-cart"></i>
+            </a>
+            <a href="#" class="icon-btn" title="Logout">
+              <i class="fa fa-sign-out-alt"></i>
+            </a>
+          </div>
+          <button id="menu_nav" class="menu-toggle" aria-label="Toggle menu">
+            <i class="fa fa-bars"></i>
+          </button>
         </div>
       </div>
-      <div class="card">
-        <img src="images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-        <div class="actions">
+    </nav>
 
-          <i class="fas fa-shopping-cart"></i>
-          <i class="fas fa-eye"></i>
-        </div>
-        <div class="category">Women's Fashion</div>
-        <div class="title">Woman Shawl</div>
-        <div class="price">191 EGP</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          4.8
+    <div class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Fresh Products, Delivered to Your Door</h1>
+          <p>Shop the best quality products at the best prices</p>
+          <a href="#products-section" class="btn">Shop Now</a>
         </div>
       </div>
-      <div class="card">
-        <img src="images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-        <div class="actions">
-
-          <i class="fas fa-shopping-cart"></i>
-          <i class="fas fa-eye"></i>
-        </div>
-        <div class="category">Women's Fashion</div>
-        <div class="title">Woman Shawl</div>
-        <div class="price">191 EGP</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          4.8
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-        <div class="actions">
-
-          <i class="fas fa-shopping-cart"></i>
-          <i class="fas fa-eye"></i>
-        </div>
-        <div class="category">Women's Fashion</div>
-        <div class="title">Woman Shawl</div>
-        <div class="price">191 EGP</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          4.8
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-        <div class="actions">
-
-          <i class="fas fa-shopping-cart"></i>
-          <i class="fas fa-eye"></i>
-        </div>
-        <div class="category">Women's Fashion</div>
-        <div class="title">Woman Shawl</div>
-        <div class="price">191 EGP</div>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          4.8
-        </div>
-      </div> -->
-      <!-- كرر الكارت مع تغيير الصورة والسعر والتقييم حسب الحاجة -->
     </div>
-  </section>
-  <footer class="page-footer">
-    <div class="footer-content">
+
+    <section id="products-section" class="products-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Products</h2>
+          <p>Discover our selection of high-quality products</p>
+        </div>
+        <div class="products">
+          <!-- Products will be loaded here dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <div class="footer-content">
         <div class="footer-section">
-            <h3>About FreshCart</h3>
-            <p>FreshCart is your one-stop destination for fresh groceries, quality products, and exceptional shopping experience.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+          <h3>About FreshCart</h3>
+          <p>FreshCart is your one-stop destination for fresh groceries, quality products, and exceptional shopping experience.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </div>
         <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Special Offers</a></li>
-            </ul>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Special Offers</a></li>
+          </ul>
         </div>
         <div class="footer-section">
-            <h3>Customer Service</h3>
-            <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Shipping Policy</a></li>
-                <li><a href="#">Returns & Refunds</a></li>
-            </ul>
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+          </ul>
         </div>
-    </div>
-    <div class="footer-bottom">
+      </div>
+      <div class="footer-bottom">
         <span>&copy; 2025 FreshCart. All rights reserved.</span>
-    </div>
-</footer>
-<script src="main.js"></script>
+      </div>
+    </footer>
+  </div>
+  <script src="main.js"></script>
 </body>
-
 </html>

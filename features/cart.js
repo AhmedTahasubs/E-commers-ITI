@@ -1,3 +1,21 @@
+const btm_nav = document.getElementById("menu_nav")
+const list = document.getElementById("links")
+btm_nav.addEventListener("click", () => {
+  list.classList.toggle("active")
+})
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest("#menu_nav") && !e.target.closest("#links")) {
+    list.classList.remove("active")
+  }
+})
+// Adjust menu display on window resize
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    list.classList.remove("active")
+  }
+})
+
 function fetchCart() {
     //const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage after login
     fetch(`http://localhost:3000/cart?userId=1`)
