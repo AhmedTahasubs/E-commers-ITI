@@ -1,5 +1,6 @@
 function fetchCart() {
-    fetch(`http://localhost:3000/cart?userId=${userId}`)
+    //const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage after login
+    fetch(`http://localhost:3000/cart?userId=1`)
         .then(res => res.json())
         .then(async (carts) => {
             const container = document.getElementById('cart-container');
@@ -92,7 +93,8 @@ function removeProduct(cartId, productId) {
 }
 
 function clearCart() {
-    fetch(`http://localhost:3000/cart?userId=${userId}`)
+    //const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage after login
+    fetch(`http://localhost:3000/cart?userId=1`)
         .then(res => res.json())
         .then(carts => {
             if (carts.length) {
