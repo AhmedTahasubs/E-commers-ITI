@@ -142,6 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
     clearCartBtn.addEventListener("click", clearCart)
   }
 })
+const logOutBtn = document.getElementById("logout")
+logOutBtn.addEventListener("click", () => {
+  localStorage.removeItem("userId")
+  localStorage.removeItem("userRole")
+  window.location.reload()
+})
 
 // container = ''
 // container+=`

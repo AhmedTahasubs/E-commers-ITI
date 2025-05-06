@@ -97,3 +97,14 @@ fetch("http://localhost:3000/products")
     })
   })
   .catch((error) => console.error("Error loading products:", error))
+
+
+
+
+  const logOutBtn = document.getElementById("logout")
+  logOutBtn.addEventListener("click", () => {
+    localStorage.removeItem("userId")
+    localStorage.removeItem("userRole")
+    window.location.reload()
+  })
+  

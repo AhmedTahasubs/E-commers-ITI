@@ -48,7 +48,9 @@ inputRegister.addEventListener("click", async (e) => {
         alert("Login successful!");
         inputRegister.removeAttribute("disabled");
         inputRegister.innerHTML = `Login`;
-        window.location.href = "../index.html";
+        localStorage.setItem("userId",user.id);
+        localStorage.setItem("userRole", user.role);
+        window.location.href = "/";
     }
 });
 window.addEventListener("keydown", (e) => {

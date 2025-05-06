@@ -93,6 +93,7 @@ const resetInputs = () => {
 }
 inputAdd.addEventListener("click", async (e) => {
   e.preventDefault()
+  const userId = localStorage.getItem("userId")
   const name = checkInputs(inputName, nameRegex)
   const price = checkInputs(inputPrice, /^[0-9]+(\.[0-9]{1,2})?$/)
   const category = checkInputs(inputCategory, /^[a-zA-Z\s]+$/)
@@ -105,7 +106,7 @@ inputAdd.addEventListener("click", async (e) => {
   inputAdd.setAttribute("disabled", "true")
   inputAdd.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`
   const product = {
-    userId: 1, //deg el id bta3 el user elly 3ayz y3ml add
+    userId: userId, //deg el id bta3 el user elly 3ayz y3ml add
     name: inputName.value,
     price: inputPrice.value,
     category: inputCategory.value,
@@ -175,8 +176,13 @@ inputEdit.addEventListener("click", async (e) => {
   }
 })
 const fetchProducts = async () => {
-  // should place the user id here
-  const res = await fetch(`http://localhost:3000/products?userId=${1}`)
+  const userId = localStorage.getItem("userId")
+  if (!userId) {
+    alert("Please login to view your products")
+    window.location.href = "/auth/login.html"
+    return
+  }
+  const res = await fetch(`http://localhost:3000/products?userId=${userId}`)
   const products = await res.json()
   renderProducts(products)
 }
@@ -189,7 +195,6 @@ const renderProducts = (products) => {
     productList.innerHTML = `<p style="text-align: center; padding: 20px;">No products found</p>`
     return
   }
-
   products.forEach((product) => {
     const container = `
       <div class="product-card">
@@ -250,3 +255,16 @@ const renderProducts = (products) => {
     })
   })
 }
+const lists = document.querySelectorAll(".sidebar-nav ul li")
+lists.forEach((list) => {
+  list.addEventListener("click", (e) => {
+    lists.forEach((item) => item.classList.remove("active"))
+    e.currentTarget.classList.add("active") 
+  })
+})
+const logOutBtn = document.getElementById("logout")
+logOutBtn.addEventListener("click", () => {
+  localStorage.removeItem("userId")
+  localStorage.removeItem("userRole")
+  window.location.href = "/"
+})

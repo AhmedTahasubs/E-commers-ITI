@@ -508,3 +508,18 @@ window.addEventListener("load", () => {
   getUsers()
   fetchProducts()
 })
+
+const lists = document.querySelectorAll(".sidebar-nav ul li")
+lists.forEach((list) => {
+  list.addEventListener("click", (e) => {
+    lists.forEach((item) => item.classList.remove("active"))
+    e.currentTarget.classList.add("active") 
+  })
+})
+
+const logOutBtn = document.getElementById("logout")
+logOutBtn.addEventListener("click", () => {
+  localStorage.removeItem("userId")
+  localStorage.removeItem("userRole")
+  window.location.href = "/"
+})
