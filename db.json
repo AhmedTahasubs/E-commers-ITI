@@ -75,20 +75,7 @@
       "status": "approved"
     }
   ],
-  "cart": [
-    {
-      "id": 1746549378096,
-      "userId": 1,
-      "totalPrice": 10250,
-      "totalItems": 1,
-      "cartProducts": [
-        {
-          "productId": "d96f",
-          "quantity": 1
-        }
-      ]
-    }
-  ],
+  "carts": [],
   "orders": [
     {
       "orderId": 1,
