@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="./seller.css">
     <title>Seller Dashboard</title>
+    <script>
+        if(localStorage.getItem('userRole')!= 'seller') {
+            alert('You are not authorized to access this page.');
+            window.location.href = '/';
+        }
+    </script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -24,12 +30,18 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li class="active">
-                        <a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+                        <a href="#products"><i class="fa-solid fa-box-open"></i> <span>Products</span></a>
+                    </li>
+                    <li class="">
+                        <a href="#"><i class="fa-solid fa-truck"></i> <span>Orders</span></a>
+                    </li>
+                    <li class="">
+                        <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
                     </li>
                 </ul>
             </nav>
             <div class="sidebar-footer">
-                <a href="../auth/signup.html"><i class="fa fa-sign-out-alt"></i> <span>Logout</span></a>
+                <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> <span>Logout</span></a>
             </div>
         </aside>
         <main class="main-content">
@@ -38,7 +50,7 @@
                 <p class="text">Manage your products and inventory</p>
             </header>
             
-            <section class="card">
+            <section id="products" class="card">
                 <div class="card-header">
                     <h3>Product Management</h3>
                 </div>

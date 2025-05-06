@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../seller/seller.css">
     <link rel="stylesheet" href="./admin.css">
     <title>Admin Dashboard</title>
+    <script>
+        if(localStorage.getItem('userRole') != 'admin') {
+            alert('You are not authorized to access this page.');
+            window.location.href = '/';
+        }
+    </script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -25,12 +31,21 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li class="active">
-                        <a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+                        <a href="#users"><i class="fa-solid fa-user"></i> <span>Users</span></a>
+                    </li>
+                    <li class="">
+                        <a href="#products"><i class="fa-solid fa-box-open"></i> <span>Products</span></a>
+                    </li>
+                    <li class="">
+                        <a href="#"><i class="fa-solid fa-truck"></i> <span>Orders</span></a>
+                    </li>
+                    <li class="">
+                        <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
                     </li>
                 </ul>
             </nav>
             <div class="sidebar-footer">
-                <a href="../auth/signup.html"><i class="fa fa-sign-out-alt"></i> <span>Logout</span></a>
+                <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> <span>Logout</span></a>
             </div>
         </aside>
         <main class="main-content">
@@ -39,7 +54,7 @@
                 <p class="text">Manage your application settings and user accounts here.</p>
             </header>
             <!-- //! Users Management Section -->
-            <section class="card">
+            <section id="users" class="card">
                 <div class="card-header">
                     <h3>Users Management</h3>
                 </div>
@@ -111,7 +126,7 @@
                 </div>
             </section>
             <!-- //! Products Management Section -->
-            <section class="card">
+            <section id="products" class="card">
                 <div class="card-header">
                     <h3>Product Management</h3>
                 </div>

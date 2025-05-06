@@ -145,4 +145,44 @@ document.addEventListener("DOMContentLoaded", () => {
   if (clearCartBtn) {
     clearCartBtn.addEventListener("click", clearCart);
   }
-});
+})
+const logOutBtn = document.getElementById("logout")
+logOutBtn.addEventListener("click", () => {
+  localStorage.removeItem("userId")
+  localStorage.removeItem("userRole")
+  window.location.reload()
+})
+// container = ''
+// container+=`
+//             <div class="cart-item">
+//               <div class="product-image">
+//                 <img src="https://i.imgur.com/JFHjdNr.jpg" alt="Fresh Organic Apples">
+//               </div>
+//               <div class="product-details">
+//                 <h4 class="product-title">Fresh Organic Apples</h4>
+//                 <p class="product-category">Fruits & Vegetables</p>
+//                 <div class="product-meta">
+//                   <span class="product-unit">1kg pack</span>
+//                   <span class="product-stock">In Stock</span>
+//                 </div>
+//               </div>
+//               <div class="product-price">
+//                 <span>EGP 35.99</span>
+//               </div>
+//               <div class="product-quantity">
+//                 <div class="quantity-control">
+//                   <button class="quantity-btn minus-btn">-</button>
+//                   <span class="quantity-value">2</span>
+//                   <button class="quantity-btn plus-btn">+</button>
+//                 </div>
+//               </div>
+//               <div class="product-subtotal">
+//                 <span>EGP 71.98</span>
+//               </div>
+//               <div class="product-actions">
+//                 <button class="remove-btn">
+//                   <i class="fa fa-trash"></i>
+//                 </button>
+//               </div>
+//             </div>
+//             `

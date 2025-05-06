@@ -13,6 +13,7 @@
   --text-color: #333;
   --light-bg: #f5f7fa;
   --border-color: #eee;
+  scroll-behavior: smooth;
 }
 
 body {
