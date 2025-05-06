@@ -27,7 +27,7 @@
   ],
   "products": [
     {
-      "id": "d96f",
+      "id": "a65f",
       "userId": 1,
       "name": "STATUS",
       "price": "10250",
@@ -37,16 +37,48 @@
       "createdAt": "2025/05/04",
       "rating": 0,
       "status": "approved"
+    },
+    {
+      "id": "h243",
+      "userId": 1,
+      "name": "STATUS",
+      "price": "10250",
+      "category": "alooovsaevsa",
+      "description": "ALO FROM STATUS",
+      "image": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "createdAt": "2025/05/04",
+      "rating": 0,
+      "status": "approved"
+    },
+    {
+      "id": "d96f",
+      "userId": 1,
+      "name": "STATUS",
+      "price": "10250",
+      "category": "alooovsaevsa",
+      "description": "ALO FROM STATUS",
+      "image": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "createdAt": "2025/05/04",
+      "rating": 0,
+      "status": "Pending"
     }
   ],
   "cart": [
     {
-      "id": "9a18",
+      "id": "1746491953059",
       "userId": 1,
-      "cartId": 1746282361815,
-      "totalPrice": 50.99,
-      "totalItems": 0,
-      "cartProducts": []
+      "totalPrice": 61500,
+      "totalItems": 6,
+      "cartProducts": [
+        {
+          "productId": "h243",
+          "quantity": 3
+        },
+        {
+          "productId": "a65f",
+          "quantity": 3
+        }
+      ]
     }
   ],
   "orders": [
