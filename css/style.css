@@ -490,7 +490,6 @@ body {
   }
 
   .nav-links.active {
-    /* margin-top: -15px; */
     display: flex;
   }
 
