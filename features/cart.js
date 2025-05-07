@@ -123,24 +123,6 @@ if (!localStorage.getItem("userId")) {
 }
 
 let currentCartId = null;
-const btm_nav = document.getElementById("menu_nav")
-const list = document.getElementById("links")
-btm_nav.addEventListener("click", () => {
-  list.classList.toggle("active")
-})
-// Close menu when clicking outside
-document.addEventListener("click", (e) => {
-  if (!e.target.closest("#menu_nav") && !e.target.closest("#links")) {
-    list.classList.remove("active")
-  }
-})
-// Adjust menu display on window resize
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
-    list.classList.remove("active")
-  }
-})
-
 // Add this function to update the subtotal in the order summary
 function updateSubtotal(totalPrice) {
 
@@ -272,43 +254,3 @@ document.addEventListener("DOMContentLoaded", () => {
     clearCartBtn.addEventListener("click", clearCart);
   }
 })
-const logOutBtn = document.getElementById("logout")
-logOutBtn.addEventListener("click", () => {
-  localStorage.removeItem("userId")
-  localStorage.removeItem("userRole")
-  window.location.reload()
-})
-// container = ''
-// container+=`
-//             <div class="cart-item">
-//               <div class="product-image">
-//                 <img src="https://i.imgur.com/JFHjdNr.jpg" alt="Fresh Organic Apples">
-//               </div>
-//               <div class="product-details">
-//                 <h4 class="product-title">Fresh Organic Apples</h4>
-//                 <p class="product-category">Fruits & Vegetables</p>
-//                 <div class="product-meta">
-//                   <span class="product-unit">1kg pack</span>
-//                   <span class="product-stock">In Stock</span>
-//                 </div>
-//               </div>
-//               <div class="product-price">
-//                 <span>EGP 35.99</span>
-//               </div>
-//               <div class="product-quantity">
-//                 <div class="quantity-control">
-//                   <button class="quantity-btn minus-btn">-</button>
-//                   <span class="quantity-value">2</span>
-//                   <button class="quantity-btn plus-btn">+</button>
-//                 </div>
-//               </div>
-//               <div class="product-subtotal">
-//                 <span>EGP 71.98</span>
-//               </div>
-//               <div class="product-actions">
-//                 <button class="remove-btn">
-//                   <i class="fa fa-trash"></i>
-//                 </button>
-//               </div>
-//             </div>
-//             `
