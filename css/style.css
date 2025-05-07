@@ -206,16 +206,15 @@ body {
   margin: 20px auto;
   display: block;
   font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   outline: none;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 #searchInput:focus {
   border-color:var(--main-green-color);
-  box-shadow: 0 2px 8px rgba(31, 229, 104, 0.3);
+  box-shadow: 0 0 5px var(--main-green-color);
 }
 
 
