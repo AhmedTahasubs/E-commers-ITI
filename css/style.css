@@ -198,6 +198,26 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(74, 222, 128, 0.3);
 }
+/*search input*/
+#searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  margin: 20px auto;
+  display: block;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#searchInput:focus {
+  border-color:var(--main-green-color);
+  box-shadow: 0 2px 8px rgba(31, 229, 104, 0.3);
+}
+
 
 /* Products Section */
 .products-section {
