@@ -1,12 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Toggle the menu visibility
-  const btm_nav = document.getElementById('menu_nav');
-  const list = document.getElementById('links');
-
-  btm_nav.addEventListener('click', function () {
-      list.classList.toggle('show');  // Toggle the visibility of the menu
-  });
-
+  const btm_nav = document.getElementById("menu_nav")
+  const list = document.getElementById("links")
+  
+  btm_nav.addEventListener("click", () => {
+    list.classList.toggle("active")
+  })
+  
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#menu_nav") && !e.target.closest("#links")) {
+      list.classList.remove("active")
+    }
+  })
+  
+  // Adjust menu display on window resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      list.classList.remove("active")
+    }
+  })
+  
   // Handle the Add to Cart button click
   const addToCartBtn = document.getElementById('add-to-cart');
   if (addToCartBtn) {
@@ -202,10 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add event listener to the "eye" icon for product details
         document.querySelectorAll('.view').forEach(icon => {
             icon.addEventListener('click', (e) => {
-                const productId = e.target.getAttribute('data-id');
-                console.log(productId);
-                
-                // window.location.reload()
+                const productId = e.currentTarget.getAttribute('data-id');
                 window.location.href = `product.html?id=${productId}`;
             });
         });
