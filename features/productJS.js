@@ -113,26 +113,28 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch('http://localhost:3000/products')
     .then(res => res.json())
     .then(products => {
-        const container = document.querySelector('.products');
+        const container = document.querySelector('div.products');        
         container.innerHTML = ''; // Clear the container before appending new items
 
         products.forEach(product => {
             // Only display approved products
             if (product.status === "approved") {
                 const card = document.createElement('div');
-                card.className = 'card';
+                card.className = 'cardd';
                 card.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <div class="actions">
-                        <i class="fas fa-shopping-cart cart-btn"></i>
-                        <i class="fas fa-eye" data-id="${product.id}"></i> 
-                    </div>
-                    <div class="category">${product.category || 'N/A'}</div>
-                    <div class="title">${product.name}</div>
-                    <div class="price">${product.price} EGP</div> 
-                    <div class="rating">
-                        <i class="fas fa-star"></i> ${product.rating || 'No Rating'}
-                    </div>
+                    <div class="card-image-wrapper">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="card-content">
+                            <div class="category">${product.category}</div>
+                            <div class="title">${product.name}</div>
+                            <div class="price">${product.price} EGP</div>
+                            <div class="rating"><i class="fas fa-star"></i> 4.8</div>
+                            <div class="actions">
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="action-btn view" data-id="${product.id}"><i class="fas fa-eye"></i> View</button>
+                            </div>
+                        </div>
                 `;
                 container.appendChild(card);
 
@@ -198,9 +200,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Add event listener to the "eye" icon for product details
-        document.querySelectorAll('.fa-eye').forEach(icon => {
+        document.querySelectorAll('.view').forEach(icon => {
             icon.addEventListener('click', (e) => {
                 const productId = e.target.getAttribute('data-id');
+                console.log(productId);
+                
+                // window.location.reload()
                 window.location.href = `product.html?id=${productId}`;
             });
         });

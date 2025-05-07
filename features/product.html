@@ -8,38 +8,40 @@
         rel="stylesheet">
     <title>product</title>
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="./product.css">
 </head>
 
 <body>
-
     <nav class="navbar">
-        <div class="buttons">
-            <div class="logo">
-                <i class="fa fa-shopping-cart green-icon"></i>
-                <span class="brand">Fresh<span class="bold">Cart</span></span>
+        <div class="navbar-container">
+          <div class="logo">
+            <i class="fa fa-shopping-cart green-icon"></i>
+            <span class="brand">Fresh<span class="bold">Cart</span></span>
+          </div>
+          <div class="nav-actions">
+            <ul id="links" class="nav-links">
+              <li><a href="/" class="">Home</a></li>
+              <li><a href="./orders.html">Orders</a></li>
+              <li><a href="#">Categories</a></li>
+              <li><a href="#">Deals</a></li>
+            </ul>
+            <div class="nav-icons">
+              <a href="./cart.html" class="icon-btn" title="Cart">
+                <i class="fa fa-shopping-cart"></i>
+              </a>
+              <a href="#" id="logout" class="icon-btn" title="Logout">
+                <i class="fa fa-sign-out-alt"></i>
+              </a>
             </div>
-            <div id="menu_nav" class="menu-toggle">
-                <i class="fa fa-bars"></i>
-            </div>
+            <button id="menu_nav" class="menu-toggle" aria-label="Toggle menu">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
         </div>
-        <ul id="links" class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Orders</a></li>
-            <li>
-                <a href="cart.html">
-                    <i class="fa fa-shopping-cart green-icon"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-sign-out-alt"></i></a>
-            </li>
-        </ul>
-    </nav>
+      </nav>
 
 
-
-    <div class="container product-container">
+    <div class="">
         <div class="main-image">
             <img id="mainImg" />
         </div>
@@ -58,86 +60,10 @@
         </div>
     </div>
 
-    <section class="container">
-        <h2><span class="green-bar">|</span>Related Products</h2>
+    <section class="container products-section">
+        <h2>Related Products</h2>
         <div class="products">
-            <!-- <div class="card">
-                <img src="../images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-                <div class="actions">
-
-                    <i class="fas fa-shopping-cart"></i>
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="category">Women's Fashion</div>
-                <div class="title">Woman Shawl</div>
-                <div class="price">191 EGP</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    4.8
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-                <div class="actions">
-
-                    <i class="fas fa-shopping-cart"></i>
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="category">Women's Fashion</div>
-                <div class="title">Woman Shawl</div>
-                <div class="price">191 EGP</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    4.8
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-                <div class="actions">
-
-                    <i class="fas fa-shopping-cart"></i>
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="category">Women's Fashion</div>
-                <div class="title">Woman Shawl</div>
-                <div class="price">191 EGP</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    4.8
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-                <div class="actions">
-
-                    <i class="fas fa-shopping-cart"></i>
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="category">Women's Fashion</div>
-                <div class="title">Woman Shawl</div>
-                <div class="price">191 EGP</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    4.8
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/Screenshot 2025-04-30 020853.png" alt="Shawl">
-                <div class="actions">
-
-                    <i class="fas fa-shopping-cart"></i>
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="category">Women's Fashion</div>
-                <div class="title">Woman Shawl</div>
-                <div class="price">191 EGP</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    4.8
-                </div>
-            </div>
-             -->
+            <!-- Products will be loaded here dynamically -->
         </div>
     </section>
 
