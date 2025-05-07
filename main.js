@@ -61,53 +61,64 @@ function renderProducts(products) {
 
     // زر الإضافة للسلة
     card.querySelector(".cart-btn").addEventListener("click", () => {
-      const userId = 1
-
-      fetch(`http://localhost:3000/carts?userId=${userId}`)
-        .then((res) => res.json())
-        .then((data) => {
-          let userCart = data[0]
-
-          if (!userCart) {
-            const newCart = {
-              userId,
-              totalPrice: parseFloat(product.price),
-              totalItems: 1,
-              cartProducts: [{ productId: product.id, quantity: 1 }],
-            }
-
-            fetch("http://localhost:3000/carts", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(newCart),
-            })
-              .then((res) => res.json())
-              .then(() => alert("Product added to cart!"))
-              .catch((err) => console.error("Error creating cart:", err))
-          } else {
-            const existingProduct = userCart.cartProducts.find(
-              (p) => p.productId === product.id
-            )
-
-            if (existingProduct) {
-              existingProduct.quantity += 1
-            } else {
-              userCart.cartProducts.push({ productId: product.id, quantity: 1 })
-            }
-
-            userCart.totalItems += 1
-            userCart.totalPrice += parseFloat(product.price)
-
-            fetch(`http://localhost:3000/carts/${userCart.id}`, {
-              method: "PUT",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(userCart),
-            })
-              .then(() => alert("Product added to cart!"))
-              .catch((err) => console.error("Error updating cart:", err))
-          }
+      const userId = localStorage.getItem('userId');
+      if (!userId) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Login Required',
+          text: 'Please log in to the site to continue.',
+          confirmButtonText: 'OK'
         })
-        .catch((err) => console.error("Error fetching cart:", err))
+        
+      } else {
+
+
+        fetch(`http://localhost:3000/carts?userId=${userId}`)
+          .then((res) => res.json())
+          .then((data) => {
+            let userCart = data[0]
+
+            if (!userCart) {
+              const newCart = {
+                userId,
+                totalPrice: parseFloat(product.price),
+                totalItems: 1,
+                cartProducts: [{ productId: product.id, quantity: 1 }],
+              }
+
+              fetch("http://localhost:3000/carts", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newCart),
+              })
+                .then((res) => res.json())
+                .then(() => alert("Product added to cart!"))
+                .catch((err) => console.error("Error creating cart:", err))
+            } else {
+              const existingProduct = userCart.cartProducts.find(
+                (p) => p.productId === product.id
+              )
+
+              if (existingProduct) {
+                existingProduct.quantity += 1
+              } else {
+                userCart.cartProducts.push({ productId: product.id, quantity: 1 })
+              }
+
+              userCart.totalItems += 1
+              userCart.totalPrice += parseFloat(product.price)
+
+              fetch(`http://localhost:3000/carts/${userCart.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userCart),
+              })
+                .then(() => alert("Product added to cart!"))
+                .catch((err) => console.error("Error updating cart:", err))
+            }
+          })
+          .catch((err) => console.error("Error fetching cart:", err))
+      }
     })
 
     // زر عرض التفاصيل
