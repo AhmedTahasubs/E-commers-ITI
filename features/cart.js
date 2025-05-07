@@ -1,3 +1,17 @@
+// منع الوصول للصفحة بدون تسجيل دخول
+if (!localStorage.getItem("userId")) {
+  // عرض رسالة باستخدام SweetAlert2
+  Swal.fire({
+    icon: 'warning',
+    title: 'Access Denied',
+    text: 'You must log in to access this page.',
+    confirmButtonText: 'Ok'
+  }).then(() => {
+    // تحويل المستخدم لصفحة تسجيل الدخول
+    window.location.href = '/';
+  });
+}
+
 let currentCartId = null;
 const btm_nav = document.getElementById("menu_nav")
 const list = document.getElementById("links")
@@ -21,12 +35,14 @@ window.addEventListener("resize", () => {
 function updateSubtotal(totalPrice) {
 
   document.getElementById("subtotal-price").textContent = `${totalPrice.toFixed(2)} EGP`
-  document.getElementById("total-price").textContent=  `${totalPrice.toFixed(2)} EGP`
+  document.getElementById("total-price").textContent = `${totalPrice.toFixed(2)} EGP`
 }
 
 // Modify the fetchCart function to update the subtotal and connect the clear cart button
+
 function fetchCart() {
-  fetch(`http://localhost:3000/carts?userId=1`)
+  const userId = localStorage.getItem('userId');
+  fetch(`http://localhost:3000/carts?userId=${userId}`)
     .then((res) => res.json())
     .then(async (carts) => {
       const container = document.getElementById("cart-container");
@@ -36,7 +52,7 @@ function fetchCart() {
       }
 
       const cart = carts[0];
-      currentCartId = cart.id?cart.id:null;
+      currentCartId = cart.id ? cart.id : null;
       const products = await fetch("http://localhost:3000/products").then((res) => res.json());
 
       let totalPrice = 0;

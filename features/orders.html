@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./features.css">
-    <title>Orders</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="./features.css" />
+  <title>Orders</title>
 </head>
+
 <body>
-    
+
+  <!-- محتوى الصفحة -->
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    window.onload = function () {
+      if (!localStorage.getItem("userId")) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Access Denied',
+          text: 'You must log in to access this page.',
+          confirmButtonText: 'Ok'
+        }).then(() => {
+          window.location.href = "/";
+        });
+      }
+    };
+  </script>
 </body>
+
 </html>

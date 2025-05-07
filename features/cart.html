@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="./cart.css">
-    <title>Cart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link rel="stylesheet" href="./cart.css">
+  <title>Cart</title>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="navbar-container">
@@ -17,16 +20,16 @@
       </div>
       <div class="nav-actions">
         <ul id="links" class="nav-links">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">Orders</a></li>
+          <li><a href="../index.html" class="active">Home</a></li>
+          <li><a href="orders.html">Orders</a></li>
           <li><a href="#">Categories</a></li>
           <li><a href="#">Deals</a></li>
         </ul>
         <div class="nav-icons">
-          <a href="features/cart.html" class="icon-btn" title="Cart">
+          <a  class="icon-btn" title="Cart">
             <i class="fa fa-shopping-cart"></i>
           </a>
-          <a href="#" id="logout" class="icon-btn" title="Logout">
+          <a href="../auth/Login.html" id="logout" class="icon-btn" title="Logout">
             <i class="fa fa-sign-out-alt"></i>
           </a>
         </div>
@@ -37,25 +40,25 @@
     </div>
   </nav>
 
-<div class="cart-page-container">
-  <div class="container">
-    <div class="cart-header">
-      <h1>Your Shopping Cart</h1>
-      <p class="cart-subtitle">Review your items and proceed to checkout</p>
-    </div>
-    
-    <div class="cart-content">
-      <div class="cart-items-container">
-        <div class="cart-items-header">
-          <div class="cart-column product-info">Product</div>
-          <div class="cart-column product-price">Price</div>
-          <div class="cart-column product-quantity">Quantity</div>
-          <div class="cart-column product-subtotal">Subtotal</div>
-          <div class="cart-column product-actions">Actions</div>
-        </div>
-        
-        <div id="cart-container" class="cart-items-list">
-          <!-- This is a dummy product example - will be replaced by cart.js -->
+  <div class="cart-page-container">
+    <div class="container">
+      <div class="cart-header">
+        <h1>Your Shopping Cart</h1>
+        <p class="cart-subtitle">Review your items and proceed to checkout</p>
+      </div>
+
+      <div class="cart-content">
+        <div class="cart-items-container">
+          <div class="cart-items-header">
+            <div class="cart-column product-info">Product</div>
+            <div class="cart-column product-price">Price</div>
+            <div class="cart-column product-quantity">Quantity</div>
+            <div class="cart-column product-subtotal">Subtotal</div>
+            <div class="cart-column product-actions">Actions</div>
+          </div>
+
+          <div id="cart-container" class="cart-items-list">
+            <!-- This is a dummy product example - will be replaced by cart.js -->
             <!-- <div class="cart-item">
               <div class="product-image">
                 <img src="https://i.imgur.com/JFHjdNr.jpg" alt="Fresh Organic Apples">
@@ -87,88 +90,91 @@
                 </button>
               </div>
             </div> -->
-          <!-- End of dummy product -->
+            <!-- End of dummy product -->
+          </div>
+
+          <div class="cart-actions">
+            <a href="/" class="continue-shopping">
+              <i class="fa fa-arrow-left"></i> Continue Shopping
+            </a>
+            <button id="clear-cart-btn" class="clear-cart-btn">
+              <i class="fa fa-trash"></i> Clear Cart
+            </button>
+          </div>
         </div>
-        
-        <div class="cart-actions">
-          <a href="/" class="continue-shopping">
-            <i class="fa fa-arrow-left"></i> Continue Shopping
-          </a>
-          <button id="clear-cart-btn" class="clear-cart-btn">
-            <i class="fa fa-trash"></i> Clear Cart
+
+        <div class="cart-summary">
+          <h3 class="summary-title">Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal-price">EGP 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>EGP 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Tax</span>
+            <span>EGP 0</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="total-price">EGP 0</span>
+          </div>
+          <button class="checkout-btn">
+            Proceed to Checkout <i class="fa fa-arrow-right"></i>
           </button>
-        </div>
-      </div>
-      
-      <div class="cart-summary">
-        <h3 class="summary-title">Order Summary</h3>
-        <div class="summary-row">
-          <span>Subtotal</span>
-          <span id="subtotal-price">EGP 0</span>
-        </div>
-        <div class="summary-row">
-          <span>Shipping</span>
-          <span>EGP 0</span>
-        </div>
-        <div class="summary-row">
-          <span>Tax</span>
-          <span>EGP 0</span>
-        </div>
-        <div class="summary-row total">
-          <span>Total</span>
-          <span id="total-price">EGP 0</span>
-        </div>
-        <button class="checkout-btn">
-          Proceed to Checkout <i class="fa fa-arrow-right"></i>
-        </button>
-        <div class="payment-methods">
-          <p>We Accept</p>
-          <div class="payment-icons">
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-paypal"></i>
-            <i class="fab fa-cc-apple-pay"></i>
+          <div class="payment-methods">
+            <p>We Accept</p>
+            <div class="payment-icons">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-paypal"></i>
+              <i class="fab fa-cc-apple-pay"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
   <footer class="page-footer">
     <div class="footer-content">
-        <div class="footer-section">
-            <h3>About FreshCart</h3>
-            <p>FreshCart is your one-stop destination for fresh groceries, quality products, and exceptional shopping experience.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+      <div class="footer-section">
+        <h3>About FreshCart</h3>
+        <p>FreshCart is your one-stop destination for fresh groceries, quality products, and exceptional shopping
+          experience.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Special Offers</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Customer Service</h3>
-            <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Shipping Policy</a></li>
-                <li><a href="#">Returns & Refunds</a></li>
-            </ul>
-        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Special Offers</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Service</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2025 FreshCart. All rights reserved.</span>
+      <span>&copy; 2025 FreshCart. All rights reserved.</span>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="cart.js"></script>
 </body>
+
 </html>
