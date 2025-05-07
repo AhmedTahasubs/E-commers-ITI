@@ -92,36 +92,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Load product details based on the URL parameter
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get('id');
+  // Get productId from URL
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
 
-  fetch(`http://localhost:3000/products/${productId}`)
-    .then(res => res.json())
-    .then(product => {
-        // Check if the product is approved before displaying
-        if (product.status === "approved") {
-            // Display product details
-            document.getElementById('mainImg').src = product.image;
-            document.querySelector('.info h2').textContent = product.name;
-            document.querySelector('.info .price').textContent = `${product.price} EGP`;
-            document.querySelector('.info .rating').textContent = `★★★★☆ ${product.rating || 4.8}`;
-            document.querySelector('.details').innerHTML = `
-                <p><strong>Category:</strong> ${product.category || 'General'}</p>
-                <p><strong>Quantity:</strong> ${product.quantity || 0}</p>
-                <p><strong>Material:</strong> ${product.material || 'Unknown'}</p>
-                <p><strong>Colour:</strong> ${product.color || 'Multicolour'}</p>
-                <p><strong>Department:</strong> ${product.department || 'N/A'}</p>
-            `;
-        } else {
-            // If product is not approved
-            document.querySelector('.product-container').innerHTML = '<h2>This product is not approved for display</h2>';
-        }
-    })
-    .catch(error => {
-        console.error('Error loading product:', error);
-        document.querySelector('.product-container').innerHTML = '<h2>Product not found</h2>';
-    });
+// عناصر الصفحة
+const productTitle = document.getElementById('product-title');
+const productRating = document.querySelector('.product-rating span');
+const productPrice = document.querySelector('.current-price');
+const productMainImage = document.getElementById('mainImg');
+const productDescription = document.querySelector('.product-description p');
+const productCategory = document.querySelector('.detail-row:nth-child(1) .detail-value');
+
+
+fetch(`http://localhost:3000/products/${productId}`)
+  .then(res => {
+    if (!res.ok) throw new Error('Product not found');
+    return res.json();
+  })
+  .then(product => {
+    if (product.status !== "approved") {
+      document.querySelector('.product-container').innerHTML = '<h2>This product is not approved for display</h2>';
+      return;
+    }
+
+    // تحديث بيانات المنتج
+    productMainImage.src = product.image;
+    productTitle.textContent = product.name;
+    productRating.textContent = `${product.rating || 4.5} (${product.reviews || 100} reviews)`;
+    productPrice.textContent = `${product.price} EGP`;
+    productDescription.textContent = product.description || 'No description provided';
+
+    productCategory.textContent = product.category || 'General';
+
+    // يمكنك تحديث تفاصيل إضافية لو احتجت، مثل الأبعاد أو الوزن...
+
+  })
+  .catch(error => {
+    console.error('Error loading product:', error);
+    document.querySelector('.product-container').innerHTML = '<h2>Product not found</h2>';
+  });
+
 
   // Load related products
   fetch('http://localhost:3000/products')
