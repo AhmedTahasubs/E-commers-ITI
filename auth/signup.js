@@ -1,3 +1,27 @@
+// Re-select dynamic #links and #menu_nav
+const list = document.getElementById("links");
+const btm_nav = document.getElementById("menu_nav");
+if (btm_nav && list) {
+  // Toggle menu
+  btm_nav.addEventListener("click", () => {
+    list.classList.toggle("active");
+    if (list.classList.contains("active") && window.innerWidth < 768) {
+      list.style.marginTop = "-15px"
+    }
+  });
+  // Click outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#menu_nav") && !e.target.closest("#links")) {
+      list.classList.remove("active");
+    }
+  });
+  // Responsive on resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      list.classList.remove("active");
+    }
+  });
+}
 const inputName = document.getElementById("name");
 const inputEmail = document.getElementById("email");
 const inputPhone = document.getElementById("phone");

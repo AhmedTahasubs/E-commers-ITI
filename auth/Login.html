@@ -8,18 +8,27 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="./auth.css">
     <title>Login</title>
+    <script>
+        if (localStorage.getItem('userId')) {
+            window.location.href = '/';
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar">
-        <a href="../index.html" class="logo">
+        <a href="/" class="logo">
             <i class="fa fa-shopping-cart green-icon"></i>
             <span class="brand">Fresh<span class="bold">Cart</span></span>
         </a>
-        <div id="menu_nav" class="menu-toggle">
-            <i class="fa fa-bars"></i>
-        </div>
+        <div class="nav-actions">
+            <ul id="links" class="nav-links">
+              <li><a href="/" class="">Home</a></li>
+            </ul>
+            <button id="menu_nav" class="menu-toggle" aria-label="Toggle menu">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
     </nav>
-
     <div class="auth-container">
         <div class="auth-header">
             <h2>
