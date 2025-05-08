@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
     `
   }
-  else{
+  else {
     navbarLinks.innerHTML = `
               <ul id="links" class="nav-links">
             <li><a href="/" class="active">Home</a></li>
@@ -69,6 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
             </a>
+            <a href="features/profile.html" class="profile-img" title="Profile">
+            <img src="https://i.pravatar.cc/40" alt="Profile" />
+            </a>
+
           </div>
           <button id="menu_nav" class="menu-toggle" aria-label="Toggle menu">
             <i class="fa fa-bars"></i>
@@ -99,13 +103,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     const logOutBtn = document.getElementById("logout")
-  if (logOutBtn) {
-    logOutBtn.addEventListener("click", () => {
-      localStorage.removeItem("userId")
-      localStorage.removeItem("userRole")
-      window.location.reload()
-    })
-  }
+    if (logOutBtn) {
+      logOutBtn.addEventListener("click", () => {
+        localStorage.removeItem("userId")
+        localStorage.removeItem("userRole")
+        window.location.reload()
+      })
+    }
   }
 });
 
@@ -155,10 +159,10 @@ function renderProducts(products) {
         Swal.fire({
           icon: 'warning',
           title: 'Login Required',
-          text: 'Please log in to the site to continue.',
+          text: 'Please log in first!',
           confirmButtonText: 'OK'
         })
-        
+
       } else {
 
 
@@ -181,7 +185,16 @@ function renderProducts(products) {
                 body: JSON.stringify(newCart),
               })
                 .then((res) => res.json())
-                .then(() => alert("Product added to cart!"))
+                .then(() => Swal.fire({
+                  title: 'Added to Cart!',
+                  text: 'The product has been successfully added to your cart.',
+                  icon: 'success',
+                  showConfirmButton: false,
+                  timer: 2000,
+                  timerProgressBar: true,
+                  toast: true,
+                  position: 'top-end'
+                }))
                 .catch((err) => console.error("Error creating cart:", err))
             } else {
               const existingProduct = userCart.cartProducts.find(
@@ -202,7 +215,16 @@ function renderProducts(products) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(userCart),
               })
-                .then(() => alert("Product added to cart!"))
+                .then(() => Swal.fire({
+                  title: 'Added to Cart!',
+                  text: 'The product has been successfully added to your cart.',
+                  icon: 'success',
+                  showConfirmButton: false,
+                  timer: 10000,
+                  timerProgressBar: true,
+                  toast: true,
+                  position: 'top-end'
+                }))
                 .catch((err) => console.error("Error updating cart:", err))
             }
           })

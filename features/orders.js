@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navbarLinks.innerHTML = `
                 <ul id="links" class="nav-links">
               <li><a href="/">Home</a></li>
-              <li><a href="">Orders</a></li>
+              <li><a href=""class="active">Orders</a></li>
             </ul>
             <div class="nav-icons">
               <a href="./cart.html" class="icon-btn" title="Cart">
