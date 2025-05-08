@@ -95,7 +95,40 @@
       "status": "approved"
     }
   ],
-  "carts": [],
+  "carts": [
+    {
+      "id": "26df",
+      "userId": "838d",
+      "totalPrice": 75500,
+      "totalItems": 4,
+      "cartProducts": [
+        {
+          "productId": "0ebd",
+          "quantity": 1,
+          "userId": "838d",
+          "sellerStatus": false
+        },
+        {
+          "productId": "9823",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        },
+        {
+          "productId": "d96f",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        },
+        {
+          "productId": "h243",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        }
+      ]
+    }
+  ],
   "orders": [
     {
       "id": "5189",

@@ -128,9 +128,7 @@ function renderProducts(products) {
   const container = document.querySelector(".products")
   container.innerHTML = ""
 
-  products.forEach((product) => {
-    console.log(product);
-    
+  products.forEach((product) => {    
     const card = document.createElement("div")
     card.className = "cardd"
     card.innerHTML = `
