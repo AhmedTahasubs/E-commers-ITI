@@ -1,4 +1,3 @@
-
 //#region user management
 const inputName = document.getElementById("name")
 const inputEmail = document.getElementById("email")
@@ -523,3 +522,136 @@ logOutBtn.addEventListener("click", () => {
   localStorage.removeItem("userRole")
   window.location.href = "/"
 })
+
+const fetchOrders = async()=>{
+  const response = await fetch("http://localhost:3000/orders")
+  const data = await response.json()    
+  console.log(data[0]);
+  
+  printOrders(data)
+}
+const printOrders =(arr)=>{
+  const ordersContainer = document.getElementById("orderList")
+  ordersContainer.innerHTML = ""
+  arr.forEach(order=>{
+    const formattedDate = new Date(order.createdAt).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+    container = `<div class="order-card">
+                            <div class="order-header">
+                                <div class="order-id">
+                                    <h4>Order #${order.id}</h4>
+                                    <span class="order-date">${formattedDate}</span>
+                                </div>
+                                <div class="order-status ${order.status ==="shipped"?'shipped':order.status==='delivered'?'delivered':'pending'}">
+                                    <span>${order.status.charAt(0).toUpperCase()+order.status.slice(1)}</span>
+                                </div>
+                            </div>
+                            <div class="order-details">
+                                <div class="order-info">
+                                    <div class="info-group">
+                                        <span class="info-label">Customer ID:</span>
+                                        <span class="info-value">${order.userId}</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Address:</span>
+                                        <span class="info-value">${order.address}, ${order.city}</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Phone:</span>
+                                        <span class="info-value">${order.phone}</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Payment:</span>
+                                        <span class="info-value">${order.paymentMethod==='cash'?"Cash on delivery":"Online Payment"}</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Payment Status:</span>
+                                        <span class="info-value payment-status ${order.paid?"paid":"unpaid"}">${order.paid?"Paid":"Unpaid"}</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <h5>Order Items</h5>
+                                    <div class="items-table-container">
+                                        <table class="items-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product ID</th>
+                                                    <th>Quantity</th>
+                                                    <th>Seller ID</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            ${order.items.map((item)=>
+                                              `
+                                                <tr>
+                                                    <td data-label="Product ID">${item.productId}</td>
+                                                    <td data-label="Quantity">${item.quantity}</td>
+                                                    <td data-label="Seller ID">${item.userId}</td>
+                                                    <td data-label="Status"><span class="seller-status ${item.sellerStatus?'approved':'pending'}">${item.sellerStatus?'Approved':'Pending'}</span></td>
+                                                </tr>
+                                              `
+                                            ).join('')}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-footer">
+                                <div class="total-price">
+                                    <span class="total-label">Total Price:</span>
+                                    <span class="total-value">$${order.totalPrice}</span>
+                                </div>
+                                <div class="order-actions">
+                                      <div class="status-select-container">
+                                        <select id="orderStatus" class="status-select">
+                                            <option value="" disabled>Change Status</option>
+                                            <option value="pending" ${order.status==="pending"?"selected":""}>Pending</option>
+                                            <option value="shipped" ${order.status==="shipped"?"selected":""}>Shipped</option>
+                                            <option value="delivered" ${order.status==="delivered"?"selected":""}>Delivered</option>
+                                        </select>
+                                        </div>
+                                    <button id="update" data-id="${order.id}" class="btn order-btn">Update Status</button>
+                                    ${!order.paid?`<button id="mark" data-id="${order.id}" class="btn order-btn">Mark as Paid</button>`:''}
+                                </div>
+                            </div>
+                        </div>`
+                        ordersContainer.innerHTML +=container
+  })
+  const updateBtn = document.querySelectorAll('#update')
+  const markBtn = document.querySelectorAll('#mark')
+  updateBtn.forEach((btn)=>
+    btn.addEventListener('click',async(e)=>{
+      const id = e.target.dataset.id
+      const orderStatus = document.getElementById('orderStatus')
+      const status = orderStatus.value
+      const res = await fetch(`http://localhost:3000/orders/${id}`,{
+        method:'PATCH',
+        headers:{
+          'Content-Type':'application/json'
+          },
+          body:JSON.stringify({status})
+        })
+        const data = await res.json()
+        fetchOrders()
+          })
+    )
+  markBtn.forEach((btn)=>
+    btn.addEventListener('click',async(e)=>{
+      const id = e.target.dataset.id
+      const res = await fetch(`http://localhost:3000/orders/${id}`,{
+        method:'PATCH',
+        headers:{
+          'Content-Type':'application/json'
+          },
+          body:JSON.stringify({paid:true})
+          })
+          const data = await res.json()
+          fetchOrders()
+    })
+    )
+}
+fetchOrders()

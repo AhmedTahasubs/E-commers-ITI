@@ -37,7 +37,7 @@
                         <a href="#products"><i class="fa-solid fa-box-open"></i> <span>Products</span></a>
                     </li>
                     <li class="">
-                        <a href="#"><i class="fa-solid fa-truck"></i> <span>Orders</span></a>
+                        <a href="#orders"><i class="fa-solid fa-truck"></i> <span>Orders</span></a>
                     </li>
                     <li class="">
                         <a href="../index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a>
@@ -170,6 +170,102 @@
                 <div class="card-body">
                     <div id="productList" class="productList">
                         <!-- Products will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+            <section id="orders" class="card">
+                <div class="card-header">
+                    <h3>All Orders</h3>
+                </div>
+                <div class="card-body">
+                    <div id="orderList" class="orderList">
+                        <!-- Products will be loaded here dynamically -->
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-id">
+                                    <h4>Order #5189</h4>
+                                    <span class="order-date">May 8, 2025</span>
+                                </div>
+                                <div class="order-status shipped">
+                                    <span>Shipped</span>
+                                </div>
+                            </div>
+                            <div class="order-details">
+                                <div class="order-info">
+                                    <div class="info-group">
+                                        <span class="info-label">Customer ID:</span>
+                                        <span class="info-value">1ab9</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Address:</span>
+                                        <span class="info-value">Ahmed taha, suez</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Phone:</span>
+                                        <span class="info-value">01113795716</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Payment:</span>
+                                        <span class="info-value">Cash on Delivery</span>
+                                    </div>
+                                    <div class="info-group">
+                                        <span class="info-label">Payment Status:</span>
+                                        <span class="info-value payment-status unpaid">Unpaid</span>
+                                    </div>
+                                </div>
+                                <div class="order-items">
+                                    <h5>Order Items</h5>
+                                    <div class="items-table-container">
+                                        <table class="items-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product ID</th>
+                                                    <th>Quantity</th>
+                                                    <th>Seller ID</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-label="Product ID">0ebd</td>
+                                                    <td data-label="Quantity">3</td>
+                                                    <td data-label="Seller ID">838d</td>
+                                                    <td data-label="Status"><span class="seller-status pending">Pending</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-label="Product ID">9823</td>
+                                                    <td data-label="Quantity">1</td>
+                                                    <td data-label="Seller ID">1</td>
+                                                    <td data-label="Status"><span class="seller-status pending">Pending</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-label="Product ID">d96f</td>
+                                                    <td data-label="Quantity">1</td>
+                                                    <td data-label="Seller ID">1</td>
+                                                    <td data-label="Status"><span class="seller-status pending">Pending</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-label="Product ID">h243</td>
+                                                    <td data-label="Quantity">1</td>
+                                                    <td data-label="Seller ID">1</td>
+                                                    <td data-label="Status"><span class="seller-status pending">Pending</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-footer">
+                                <div class="total-price">
+                                    <span class="total-label">Total Price:</span>
+                                    <span class="total-value">₹75,500</span>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn order-btn">Update Status</button>
+                                    <button class="btn order-btn">Mark as Paid</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

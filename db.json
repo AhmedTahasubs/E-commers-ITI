@@ -131,7 +131,7 @@
       "city": "suez",
       "phone": "01113795716",
       "totalPrice": 75500,
-      "status": "shipped",
+      "status": "delivered",
       "createdAt": "2025-05-08T13:19:00.352Z",
       "items": [
         {
@@ -160,7 +160,7 @@
         }
       ],
       "paymentMethod": "cash",
-      "paid": false
+      "paid": true
     },
     {
       "id": "d0ce",
@@ -180,7 +180,7 @@
         }
       ],
       "paymentMethod": "cash",
-      "paid": false
+      "paid": true
     },
     {
       "id": "fb3f",
@@ -244,7 +244,7 @@
         }
       ],
       "paymentMethod": "cash",
-      "paid": false
+      "paid": true
     }
   ]
 }
