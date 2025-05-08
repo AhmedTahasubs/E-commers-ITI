@@ -93,35 +93,29 @@
       "createdAt": "2025/05/06",
       "rating": 0,
       "status": "approved"
+    },
+    {
+      "id": "be63",
+      "userId": "838d",
+      "name": "Ahmed Taha",
+      "price": "5000",
+      "category": "male",
+      "description": "ahmedtyaha",
+      "image": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "createdAt": "2025/05/08",
+      "rating": 0,
+      "status": "approved"
     }
   ],
   "carts": [
     {
-      "id": "26df",
-      "userId": "838d",
-      "totalPrice": 75500,
-      "totalItems": 4,
+      "id": "2e95",
+      "userId": "1ab9",
+      "totalPrice": 10250,
+      "totalItems": 1,
       "cartProducts": [
         {
-          "productId": "0ebd",
-          "quantity": 1,
-          "userId": "838d",
-          "sellerStatus": false
-        },
-        {
-          "productId": "9823",
-          "quantity": 1,
-          "userId": 1,
-          "sellerStatus": false
-        },
-        {
           "productId": "d96f",
-          "quantity": 1,
-          "userId": 1,
-          "sellerStatus": false
-        },
-        {
-          "productId": "h243",
           "quantity": 1,
           "userId": 1,
           "sellerStatus": false
@@ -214,7 +208,7 @@
           "productId": "0ebd",
           "quantity": 1,
           "userId": "838d",
-          "sellerStatus": false
+          "sellerStatus": true
         },
         {
           "productId": "h243",
@@ -225,6 +219,32 @@
       ],
       "paymentMethod": "online",
       "paid": true
+    },
+    {
+      "id": "6dda",
+      "userId": "838d",
+      "address": "suez elarabenn",
+      "city": "suesz",
+      "phone": "01113795716",
+      "totalPrice": 60250,
+      "status": "shipped",
+      "createdAt": "2025-05-08T17:09:38.136Z",
+      "items": [
+        {
+          "productId": "9823",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        },
+        {
+          "productId": "d96f",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        }
+      ],
+      "paymentMethod": "cash",
+      "paid": false
     }
   ]
 }

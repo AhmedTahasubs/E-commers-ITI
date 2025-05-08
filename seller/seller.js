@@ -268,3 +268,65 @@ logOutBtn.addEventListener("click", () => {
   localStorage.removeItem("userRole")
   window.location.href = "/"
 })
+const fetchOrders = async ()=>{
+  const orderList = document.getElementById('orderList')
+  orderList.innerHTML = "";
+  const sellerId = localStorage.getItem("userId");
+  const response = await fetch("http://localhost:3000/orders");
+  const orders = await response.json();
+  const sellerOrders = orders.filter(order =>
+    order.items.some(item =>item.userId === sellerId  && item.sellerStatus === false)
+  );
+  if(sellerOrders.length==0){
+    orderList.innerHTML= `<span> No orders yet</span>`;
+    return
+  }
+  sellerOrders.forEach(order=>{
+    const sellerItems = order.items.filter(item => item.userId === sellerId);
+    sellerItems.forEach(async item=>{
+      const itemData = await fetch(`http://localhost:3000/products/${item.productId}`)
+      const itemResponse = await itemData.json()
+      console.log(itemResponse);
+      const container =`
+                              <div class="product-card">
+                            <div class="img-container">
+                              <img src="${itemResponse.image}" alt="">
+                            </div>
+                            <div class="product-details">
+                              <h5>${itemResponse.name}</h5>
+                              <span>$${item.quantity*itemResponse.price}</span>
+                              <span>Quantity: ${item.quantity}</span>
+                              <span>User: ${item.userId}</span>
+                                <button data-order-id="${order.id}" data-product-id="${item.productId}" class="mark-shipped-btn btn">Mark as Shipped</button>
+                            </div>
+                        </div>
+      `
+      orderList.innerHTML += container
+    })
+  })
+}
+fetchOrders()
+document.getElementById("orderList").addEventListener("click", async (e) => {
+  if (e.target.classList.contains("mark-shipped-btn")) {
+    const orderId = e.target.getAttribute("data-order-id");
+    const productId = e.target.getAttribute("data-product-id");
+    const sellerId = localStorage.getItem("userId");
+    const res = await fetch(`http://localhost:3000/orders/${orderId}`);
+    const order = await res.json();
+    const updatedItems = order.items.map(item => {
+      if (item.productId === productId && item.userId === sellerId) {
+        return { ...item, sellerStatus: true };
+      }
+      return item;
+    });
+    await fetch(`http://localhost:3000/orders/${orderId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ ...order, items: updatedItems })
+    });
+    document.getElementById("orderList").innerHTML = "";
+    fetchOrders();
+  }
+});
