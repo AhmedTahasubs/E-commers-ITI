@@ -153,7 +153,18 @@ textarea:not(:placeholder-shown):invalid + label {
   font-size: 15px;
   color: var(--main-green-color);
 }
-
+textarea {
+  resize: vertical;
+  transition: none;
+  min-height: 75px;
+}
+div.checkout-btns {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
 .btn {
   display: inline-block;
   background-color: var(--main-green-color);
@@ -355,7 +366,9 @@ i#showPass{
   .auth-body {
     padding: 20px 15px;
   }
-
+  div.checkout-btns{
+    flex-direction: column;
+  }
   .footer-content {
     flex-direction: column;
     gap: 20px;

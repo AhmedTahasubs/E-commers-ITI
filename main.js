@@ -69,10 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
             </a>
-            <a href="features/profile.html" class="profile-img" title="Profile">
-            <img src="https://i.pravatar.cc/40" alt="Profile" />
-            </a>
-
           </div>
           <button id="menu_nav" class="menu-toggle" aria-label="Toggle menu">
             <i class="fa fa-bars"></i>
@@ -133,6 +129,8 @@ function renderProducts(products) {
   container.innerHTML = ""
 
   products.forEach((product) => {
+    console.log(product);
+    
     const card = document.createElement("div")
     card.className = "cardd"
     card.innerHTML = `
@@ -176,7 +174,7 @@ function renderProducts(products) {
                 userId,
                 totalPrice: parseFloat(product.price),
                 totalItems: 1,
-                cartProducts: [{ productId: product.id, quantity: 1 }],
+                cartProducts: [{ productId: product.id, quantity: 1,userId:product.userId,sellerStatus:false  }],
               }
 
               fetch("http://localhost:3000/carts", {
@@ -204,7 +202,7 @@ function renderProducts(products) {
               if (existingProduct) {
                 existingProduct.quantity += 1
               } else {
-                userCart.cartProducts.push({ productId: product.id, quantity: 1 })
+                userCart.cartProducts.push({ productId: product.id, quantity: 1,userId:product.userId,sellerStatus:false })
               }
 
               userCart.totalItems += 1

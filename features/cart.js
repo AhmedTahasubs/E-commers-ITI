@@ -193,6 +193,12 @@ function fetchCart() {
       });
 
       updateSubtotal(totalPrice);
+      if(currentCartId){
+        document.getElementById("checkout-btn").addEventListener("click", () => {
+          localStorage.setItem("cartId", currentCartId);
+          window.location.href = `../auth/checkout.html`;
+        } );
+      }
     })
     .catch((err) => console.error("Error fetching cart:", err));
 }

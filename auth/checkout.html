@@ -8,8 +8,97 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="./auth.css">
     <title>CheckOut</title>
+    <script>
+        if (!localStorage.getItem('userId')) {
+            window.location.href = '/';
+        }
+    </script>
 </head>
 <body>
-    
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <i class="fa fa-shopping-cart green-icon"></i>
+            <span class="brand">Shop<span class="bold">Ease</span></span>
+        </a>
+        <div class="nav-actions">
+            <ul id="links" class="nav-links">
+              <li><a href="/" class="">Home</a></li>
+            </ul>
+            <button id="menu_nav" class="menu-toggle" aria-label="Toggle menu">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+    </nav>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>
+                <i class="fa-solid fa-cash-register"></i>
+                Checkout now
+            </h2>
+        </div>
+        <div class="auth-body">
+            <div class="form">
+                <div>
+                    <textarea placeholder=" " id="address" name="address" type="text" required></textarea>
+                    <label for="address">Address</label>
+                    <p id="addressError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="city" name="city" type="text" required>
+                    <label for="city">City</label>
+                    <p id="cityError"></p>
+                </div>
+                <div>
+                    <input placeholder=" " id="phone" name="phone" type="tel" required>
+                    <label for="phone">Phone</label>
+                    <p id="phoneError"></p>
+                </div>
+                <div class="checkout-btns">
+                    <div class="btns">
+                        <button type="button" id="delivery" class="btn">Pay On Delivery <i class="fa-solid fa-truck"></i></button>
+                    </div>
+                    <div class="btns">
+                        <button type="button" id="online" class="btn">Pay Online <i class="fa-brands fa-cc-visa"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About ShopEase</h3>
+                <p>ShopEase is your one-stop destination for fresh groceries, quality products, and exceptional shopping experience.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 ShopEase. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="./checkout.js"></script>
 </body>
 </html>

@@ -98,34 +98,42 @@
   "carts": [],
   "orders": [
     {
-      "cartId": 1,
-      "userId": 1,
+      "id": "5189",
+      "userId": "1ab9",
+      "address": "Ahmed taha ",
+      "city": "suez",
+      "phone": "01113795716",
+      "totalPrice": 75500,
+      "status": "shipped",
+      "createdAt": "2025-05-08T13:19:00.352Z",
       "items": [
         {
-          "productId": 1,
-          "quantity": 2
+          "productId": "0ebd",
+          "quantity": 3,
+          "userId": "838d",
+          "sellerStatus": false
         },
         {
-          "productId": 2,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 42.97,
-      "status": "shipped",
-      "id": "0c5b"
-    },
-    {
-      "cartId": 2,
-      "userId": 1,
-      "items": [
+          "productId": "9823",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        },
         {
-          "productId": 3,
-          "quantity": 1
+          "productId": "d96f",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        },
+        {
+          "productId": "h243",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
         }
       ],
-      "totalPrice": 30.99,
-      "status": "pending",
-      "id": "264a"
+      "paymentMethod": "cash",
+      "paid": false
     }
   ]
 }
