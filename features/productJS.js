@@ -116,10 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
            Swal.fire({
                icon: 'warning',
                title: 'Please log in first!',
-               confirmButtonText: 'Login'
-           }).then(() => {
-               window.location.href = '/';
-           });
+               confirmButtonText: 'Ok'
+           }).then();
            return;
        }
 
@@ -256,7 +254,7 @@ fetch(`http://localhost:3000/products/${productId}`)
                        Swal.fire({
                            icon: 'warning',
                            title: 'Login Required',
-                           text: 'Please log in to the site to continue.',
+                           text: 'Please log in first!',
                            confirmButtonText: 'OK'
                        });
                    } else {
@@ -300,7 +298,16 @@ fetch(`http://localhost:3000/products/${productId}`)
                                        headers: { "Content-Type": "application/json" },
                                        body: JSON.stringify(userCart),
                                    })
-                                   .then(() => alert("Product added to cart!"))
+                                   .then(() => Swal.fire({
+                                    title: 'Added to Cart!',
+                                    text: 'The product has been successfully added to your cart.',
+                                    icon: 'success',
+                                    showConfirmButton: false,
+                                    timer: 10000,
+                                    timerProgressBar: true,
+                                    toast: true,
+                                    position: 'top-end'
+                                  }))
                                    .catch((err) => console.error("Error updating cart:", err));
                                }
                            })
