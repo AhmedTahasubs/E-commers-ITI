@@ -107,22 +107,7 @@
       "status": "approved"
     }
   ],
-  "carts": [
-    {
-      "id": "2e95",
-      "userId": "1ab9",
-      "totalPrice": 10250,
-      "totalItems": 1,
-      "cartProducts": [
-        {
-          "productId": "d96f",
-          "quantity": 1,
-          "userId": 1,
-          "sellerStatus": false
-        }
-      ]
-    }
-  ],
+  "carts": [],
   "orders": [
     {
       "id": "5189",
@@ -138,7 +123,7 @@
           "productId": "0ebd",
           "quantity": 3,
           "userId": "838d",
-          "sellerStatus": false
+          "sellerStatus": true
         },
         {
           "productId": "9823",
@@ -189,7 +174,7 @@
       "city": "sharqe",
       "phone": "01090720075",
       "totalPrice": 75500,
-      "status": "shipped",
+      "status": "delivered",
       "createdAt": "2025-05-08T14:31:17.384Z",
       "items": [
         {
@@ -227,7 +212,7 @@
       "city": "suesz",
       "phone": "01113795716",
       "totalPrice": 60250,
-      "status": "shipped",
+      "status": "delivered",
       "createdAt": "2025-05-08T17:09:38.136Z",
       "items": [
         {
@@ -241,6 +226,64 @@
           "quantity": 1,
           "userId": 1,
           "sellerStatus": false
+        }
+      ],
+      "paymentMethod": "cash",
+      "paid": true
+    },
+    {
+      "id": "b5bb",
+      "userId": "1ab9",
+      "address": "Fqs sharqe",
+      "city": "sharqy",
+      "phone": "01090720075",
+      "totalPrice": 10250,
+      "status": "delivered",
+      "createdAt": "2025-05-09T15:16:48.167Z",
+      "items": [
+        {
+          "productId": "d96f",
+          "quantity": 3,
+          "userId": 1,
+          "sellerStatus": false
+        }
+      ],
+      "paymentMethod": "online",
+      "paid": true
+    },
+    {
+      "id": "247d",
+      "userId": "8c55",
+      "address": "fhgfhddas",
+      "city": "fQs",
+      "phone": "01090720075",
+      "totalPrice": 70250,
+      "status": "delivered",
+      "createdAt": "2025-05-09T15:18:15.591Z",
+      "items": [
+        {
+          "productId": "9823",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        },
+        {
+          "productId": "d96f",
+          "quantity": 1,
+          "userId": 1,
+          "sellerStatus": false
+        },
+        {
+          "productId": "0ebd",
+          "quantity": 1,
+          "userId": "838d",
+          "sellerStatus": true
+        },
+        {
+          "productId": "be63",
+          "quantity": 1,
+          "userId": "838d",
+          "sellerStatus": true
         }
       ],
       "paymentMethod": "cash",

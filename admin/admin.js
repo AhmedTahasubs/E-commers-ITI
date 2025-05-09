@@ -391,21 +391,21 @@ inputProductEdit.addEventListener("click", async (e) => {
     description: inputDesc.value,
     image: inputImage.value,
   }
-    const req = await fetch(`http://localhost:3000/products/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
-    const res = await req.json()
-    inputEdit.removeAttribute("disabled")
-    inputEdit.innerHTML = `Edit Product`
-      alert("Product updated successful!")
-      resetInputs()
-      inputEdit.style.display = "none"
-      inputAdd.style.display = "block"
-      fetchProducts()
+  const req = await fetch(`http://localhost:3000/products/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  })
+  const res = await req.json()
+  inputEdit.removeAttribute("disabled")
+  inputEdit.innerHTML = `Edit Product`
+  alert("Product updated successful!")
+  resetInputs()
+  inputEdit.style.display = "none"
+  inputAdd.style.display = "block"
+  fetchProducts()
 })
 const fetchProducts = async () => {
   const res = await fetch(`http://localhost:3000/products`)
@@ -432,11 +432,11 @@ const renderProducts = (products) => {
           <span>$${product.price}</span>
           <span>${product.category}</span>
           <span>${product.description.split(" ").slice(0, 5).join(" ")}...</span>
-          <span class="status ${product.status == "bending"?" " : "approved"}">${product.status.charAt(0).toUpperCase() + product.status.trim().slice(1)}</span>
+          <span class="status ${product.status == "bending" ? " " : "approved"}">${product.status.charAt(0).toUpperCase() + product.status.trim().slice(1)}</span>
           <div>
             <button data-id="${product.id}" id="editProduct" class="btn">Edit</button>
             ${product.status == "bending" ? `<button data-id="${product.id}" id="approveProduct" class="btn">Approve</button>` : ""}
-            <button data-id="${product.id}" id="deleteProduct" class="btn">${product.status == "bending"?"Reject":"Delete"}</button>
+            <button data-id="${product.id}" id="deleteProduct" class="btn">${product.status == "bending" ? "Reject" : "Delete"}</button>
           </div>
         </div>
       </div>
@@ -512,7 +512,7 @@ const lists = document.querySelectorAll(".sidebar-nav ul li")
 lists.forEach((list) => {
   list.addEventListener("click", (e) => {
     lists.forEach((item) => item.classList.remove("active"))
-    e.currentTarget.classList.add("active") 
+    e.currentTarget.classList.add("active")
   })
 })
 
@@ -523,17 +523,17 @@ logOutBtn.addEventListener("click", () => {
   window.location.href = "/"
 })
 
-const fetchOrders = async()=>{
+const fetchOrders = async () => {
   const response = await fetch("http://localhost:3000/orders")
-  const data = await response.json()    
+  const data = await response.json()
   console.log(data[0]);
-  
+
   printOrders(data)
 }
-const printOrders =(arr)=>{
+const printOrders = (arr) => {
   const ordersContainer = document.getElementById("orderList")
   ordersContainer.innerHTML = ""
-  arr.forEach(order=>{
+  arr.forEach(order => {
     const formattedDate = new Date(order.createdAt).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -545,8 +545,8 @@ const printOrders =(arr)=>{
                                     <h4>Order #${order.id}</h4>
                                     <span class="order-date">${formattedDate}</span>
                                 </div>
-                                <div class="order-status ${order.status ==="shipped"?'shipped':order.status==='delivered'?'delivered':'pending'}">
-                                    <span>${order.status.charAt(0).toUpperCase()+order.status.slice(1)}</span>
+                                <div class="order-status ${order.status === "shipped" ? 'shipped' : order.status === 'delivered' ? 'delivered' : 'pending'}">
+                                    <span>${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span>
                                 </div>
                             </div>
                             <div class="order-details">
@@ -565,11 +565,11 @@ const printOrders =(arr)=>{
                                     </div>
                                     <div class="info-group">
                                         <span class="info-label">Payment:</span>
-                                        <span class="info-value">${order.paymentMethod==='cash'?"Cash on delivery":"Online Payment"}</span>
+                                        <span class="info-value">${order.paymentMethod === 'cash' ? "Cash on delivery" : "Online Payment"}</span>
                                     </div>
                                     <div class="info-group">
                                         <span class="info-label">Payment Status:</span>
-                                        <span class="info-value payment-status ${order.paid?"paid":"unpaid"}">${order.paid?"Paid":"Unpaid"}</span>
+                                        <span class="info-value payment-status ${order.paid ? "paid" : "unpaid"}">${order.paid ? "Paid" : "Unpaid"}</span>
                                     </div>
                                 </div>
                                 <div class="order-items">
@@ -585,16 +585,16 @@ const printOrders =(arr)=>{
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            ${order.items.map((item)=>
-                                              `
+                                            ${order.items.map((item) =>
+      `
                                                 <tr>
                                                     <td data-label="Product ID">${item.productId}</td>
                                                     <td data-label="Quantity">${item.quantity}</td>
                                                     <td data-label="Seller ID">${item.userId}</td>
-                                                    <td data-label="Status"><span class="seller-status ${item.sellerStatus?'approved':'pending'}">${item.sellerStatus?'Approved':'Pending'}</span></td>
+                                                    <td data-label="Status"><span class="seller-status ${item.sellerStatus ? 'approved' : 'pending'}">${item.sellerStatus ? 'Approved' : 'Pending'}</span></td>
                                                 </tr>
                                               `
-                                            ).join('')}
+    ).join('')}
                                             </tbody>
                                         </table>
                                     </div>
@@ -609,49 +609,51 @@ const printOrders =(arr)=>{
                                       <div class="status-select-container">
                                         <select id="orderStatus" class="status-select">
                                             <option value="" disabled>Change Status</option>
-                                            <option value="pending" ${order.status==="pending"?"selected":""}>Pending</option>
-                                            <option value="shipped" ${order.status==="shipped"?"selected":""}>Shipped</option>
-                                            <option value="delivered" ${order.status==="delivered"?"selected":""}>Delivered</option>
+                                            <option value="pending" ${order.status === "pending" ? "selected" : ""}>Pending</option>
+                                            <option value="shipped" ${order.status === "shipped" ? "selected" : ""}>Shipped</option>
+                                            <option value="delivered" ${order.status === "delivered" ? "selected" : ""}>Delivered</option>
                                         </select>
                                         </div>
                                     <button id="update" data-id="${order.id}" class="btn order-btn">Update Status</button>
-                                    ${!order.paid?`<button id="mark" data-id="${order.id}" class="btn order-btn">Mark as Paid</button>`:''}
+                                    ${!order.paid ? `<button id="mark" data-id="${order.id}" class="btn order-btn">Mark as Paid</button>` : ''}
                                 </div>
                             </div>
                         </div>`
-                        ordersContainer.innerHTML +=container
+    ordersContainer.innerHTML += container
   })
   const updateBtn = document.querySelectorAll('#update')
   const markBtn = document.querySelectorAll('#mark')
-  updateBtn.forEach((btn)=>
-    btn.addEventListener('click',async(e)=>{
+  updateBtn.forEach((btn) =>
+    btn.addEventListener('click', async (e) => {
       const id = e.target.dataset.id
-      const orderStatus = document.getElementById('orderStatus')
+      const container = e.target.closest(".order-card")
+      const orderStatus = container.querySelector(".status-select")
       const status = orderStatus.value
-      const res = await fetch(`http://localhost:3000/orders/${id}`,{
-        method:'PATCH',
-        headers:{
-          'Content-Type':'application/json'
-          },
-          body:JSON.stringify({status})
-        })
-        const data = await res.json()
-        fetchOrders()
-          })
-    )
-  markBtn.forEach((btn)=>
-    btn.addEventListener('click',async(e)=>{
-      const id = e.target.dataset.id
-      const res = await fetch(`http://localhost:3000/orders/${id}`,{
-        method:'PATCH',
-        headers:{
-          'Content-Type':'application/json'
-          },
-          body:JSON.stringify({paid:true})
-          })
-          const data = await res.json()
-          fetchOrders()
+
+      const res = await fetch(`http://localhost:3000/orders/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ status })
+      })
+      await res.json()
+      fetchOrders()
     })
-    )
+  )
+  markBtn.forEach((btn) =>
+    btn.addEventListener('click', async (e) => {
+      const id = e.target.dataset.id
+      const res = await fetch(`http://localhost:3000/orders/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ paid: true })
+      })
+      const data = await res.json()
+      fetchOrders()
+    })
+  )
 }
 fetchOrders()

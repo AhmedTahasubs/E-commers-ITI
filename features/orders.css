@@ -575,7 +575,9 @@ body {
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  display: inline-block;
+  display: inline-flex;         
+  align-items: center;        
+  gap: 6px;                    
   width: fit-content;
   margin-top: 15px;
   text-align: center;
@@ -586,18 +588,18 @@ body {
   color: #137c3b;
 }
 
-.reorder-status.unpaid {
+.fa-xmark-circle,
+.reorder-status.cancelled {
   background-color: #fde4e4;
   color: #a31924;
 }
 
 .fa-question-circle{
-  color:var(--main-green-color);
+  background-color: #fde4e4;
+  color: #4141bc;
+
 }
 
-.fa-clock{
-  color: blue;
-}
-.fa-check-circle{
-  color: rgb(10, 152, 10);
+.reorder-status i {
+  font-size: 1rem;
 }
