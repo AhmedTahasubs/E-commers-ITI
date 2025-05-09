@@ -20,9 +20,12 @@ const cateError = document.getElementById("cateError")
 const imageError = document.getElementById("imageError")
 const inputAdd = document.getElementById("add")
 const inputEdit = document.getElementById("edit")
-const nameRegex = /^[a-zA-Z\s]{5,}$/
-const descRegex = /^[a-zA-Z0-9\s]{10,}$/
+const nameRegex = /^.{5,}$/
+const descRegex = /^.{10,}$/
 const imageRegex = /^(http|https):\/\/[^ "]+$/
+
+
+
 
 inputName.addEventListener("keyup", (e) => {
   const name = e.target.value
@@ -74,7 +77,7 @@ const checkInputs = (input, regex) => {
   if (value === "") {
     return false
   }
-  if (!regex.test(value)) {
+  if (regex && !regex.test(value)) {
     return false
   }
   return true
