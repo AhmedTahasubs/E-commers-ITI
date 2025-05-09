@@ -458,7 +458,7 @@ td.action span i.fa-trash-can:hover {
 
 .order-status.shipped {
   background-color: #e6f7ef;
-  color: var(--main-green-color);
+  color: #3b82f6;
 }
 
 .order-status.pending {
@@ -468,7 +468,7 @@ td.action span i.fa-trash-can:hover {
 
 .order-status.delivered {
   background-color: #e6f0ff;
-  color: #3b82f6;
+  color: var(--main-green-color);
 }
 
 .order-status.cancelled {
