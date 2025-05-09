@@ -114,15 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function getStatusClass(status) {
     return {
       delivered: "delivered",
-      processing: "On the way"
+      shipped: "shipped"
     }[status] || "";
   }
 
   function getStatusIcon(status) {
     return {
       delivered: "fa-check-circle",
-      processing: "fa-clock"
-    }[status] || "fa-question-circle";
+      shipped: "fa-question-circle"
+    }[status] || "fa-xmark-circle";
   }
 
   function capitalize(word) {
