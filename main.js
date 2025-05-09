@@ -24,10 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="./admin/admin.html">Dashboard</a></li>
           </ul>
           <div class="nav-icons">
-            <a href="features/cart.html" class="icon-btn" title="Cart">
+            <a href="./features/cart.html" class="icon-btn" title="Cart">
               <i class="fa fa-shopping-cart"></i>
             </a>
-            <a href="auth/Login.html" id="logout" class="icon-btn" title="Logout">
+            <a href="./features/profile.html" class="icon-btn" title="Profile">
+              <i class="fa-solid fa-circle-user"></i>
+            </a>
+            <a href="./auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
             </a>
           </div>
@@ -44,10 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="./seller/seller.html">Dashboard</a></li>
           </ul>
           <div class="nav-icons">
-            <a href="features/cart.html" class="icon-btn" title="Cart">
+            <a href="./features/cart.html" class="icon-btn" title="Cart">
               <i class="fa fa-shopping-cart"></i>
             </a>
-            <a href="auth/Login.html" id="logout" class="icon-btn" title="Logout">
+              <a href="./features/profile.html" class="icon-btn" title="Profile">
+              <i class="fa-solid fa-circle-user"></i>
+            </a>
+            <a href="./auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
             </a>
           </div>
@@ -63,10 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="./features/orders.html">Orders</a></li>
           </ul>
           <div class="nav-icons">
-            <a href="features/cart.html" class="icon-btn" title="Cart">
+            <a href="./features/cart.html" class="icon-btn" title="Cart">
               <i class="fa fa-shopping-cart"></i>
             </a>
-            <a href="auth/Login.html" id="logout" class="icon-btn" title="Logout">
+              <a href="./features/profile.html" class="icon-btn" title="Profile">
+              <i class="fa-solid fa-circle-user"></i>
+            </a>
+            <a href="./auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
             </a>
           </div>

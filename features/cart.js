@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="" class="icon-btn" title="Cart">
               <i class="fa fa-shopping-cart"></i>
             </a>
+            <a href="./profile.html" class="icon-btn" title="Profile">
+              <i class="fa-solid fa-circle-user"></i>
+            </a>
             <a href="../auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
             </a>
@@ -47,6 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="" class="icon-btn" title="Cart">
               <i class="fa fa-shopping-cart"></i>
             </a>
+            <a href="./profile.html" class="icon-btn" title="Profile">
+              <i class="fa-solid fa-circle-user"></i>
+            </a>
             <a href="../auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
             </a>
@@ -65,6 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="nav-icons">
             <a href="" class="icon-btn" title="Cart">
               <i class="fa fa-shopping-cart"></i>
+            </a>
+            <a href="./profile.html" class="icon-btn" title="Profile">
+              <i class="fa-solid fa-circle-user"></i>
             </a>
             <a href="../auth/Login.html" id="logout" class="icon-btn" title="Logout">
               <i class="fa fa-sign-out-alt"></i>
