@@ -131,7 +131,7 @@
       "city": "suez",
       "phone": "01113795716",
       "totalPrice": 75500,
-      "status": "delivered",
+      "status": "pending",
       "createdAt": "2025-05-08T13:19:00.352Z",
       "items": [
         {
