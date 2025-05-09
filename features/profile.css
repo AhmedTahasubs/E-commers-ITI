@@ -1,0 +1,59 @@
+:root {
+    --main-green-color: #4ade80;
+    --main-green-hover: #3bba6c;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --card-border-radius: 10px;
+    --transition-speed: 0.3s;
+    --text-color: #333;
+    --light-bg: #f5f7fa;
+    --border-color: #eee;
+    scroll-behavior: smooth;
+}
+
+.profile-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.profile-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile-container label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.profile-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.profile-container button {
+    padding: 10px 20px;
+    background-color: var(--main-green-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-container button:hover {
+    background-color: var(--main-green-hover);
+}
+
+.profile-container input:focus {
+    outline: none;
+    border-color: var(--main-green-color);
+    box-shadow: 0 0 5px var(--main-green-color);
+}
