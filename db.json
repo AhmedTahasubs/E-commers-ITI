@@ -33,7 +33,56 @@
       "role": "admin"
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "id": "40a5",
+      "userId": "838d",
+      "name": "Camera",
+      "price": "48500",
+      "category": "Electronics",
+      "description": "High-quality DSLR camera with great features",
+      "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "createdAt": "2025/05/09",
+      "rating": 0,
+      "status": "approved"
+    },
+    {
+      "id": "7e3d",
+      "userId": "838d",
+      "name": "AirPods",
+      "price": "9999",
+      "category": "Electronics",
+      "description": "High-quality wireless earphones with excellent sound",
+      "image": "https://media.istockphoto.com/id/1346147559/photo/modern-wireless-bluetooth-headphones-with-charging-case-on-a-blue-background.jpg?s=1024x1024&w=is&k=20&c=aizJq4Y1TbpXMIl2mTy6nTYDmJ97nYF6XTqFPrxCBL0=",
+      "createdAt": "2025/05/09",
+      "rating": 0,
+      "status": "approved"
+    },
+    {
+      "id": "7242",
+      "userId": "838d",
+      "name": "Laptop",
+      "price": "30890",
+      "category": "Electronics",
+      "description": "High-performance laptop for work and gaming",
+      "image": "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "createdAt": "2025/05/09",
+      "rating": 0,
+      "status": "approved"
+    },
+    {
+      "id": "d32e",
+      "userId": "838d",
+      "name": "iPhone XS",
+      "price": "12000",
+      "category": "Electronics",
+      "description": "Apple iPhone XS with stunning display and advanced camera system",
+      "image": "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "createdAt": "2025/05/09",
+      "rating": 0,
+      "status": "approved"
+    }
+  ],
   "carts": [],
   "orders": [
     {
@@ -214,6 +263,26 @@
         }
       ],
       "paymentMethod": "cash",
+      "paid": true
+    },
+    {
+      "id": "3a9b",
+      "userId": "1ab9",
+      "address": "FQS Sharqy",
+      "city": "FQS",
+      "phone": "01090720075",
+      "totalPrice": 12000,
+      "status": "delivered",
+      "createdAt": "2025-05-09T21:19:12.666Z",
+      "items": [
+        {
+          "productId": "d32e",
+          "quantity": 1,
+          "userId": "838d",
+          "sellerStatus": true
+        }
+      ],
+      "paymentMethod": "online",
       "paid": true
     }
   ]
